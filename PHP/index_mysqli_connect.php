@@ -25,18 +25,20 @@
 
 
             //一次看全部
-            $rows=mysqli_fetch_all($query,MYSQLI_BOTH);
+            $rows=mysqli_fetch_all($query, MYSQLI_BOTH);
             
 
             //一次只看一筆
             // $rows=mysqli_fetch_array($query,MYSQLI_BOTH);
 
 
-            echo "<pre>";
-            print_r($rows);
-            echo "</pre>";
+            // echo "<pre>";
+            // print_r($rows);
+            // echo "</pre>";
 
-            
+            echo $rows[0][3];
+            echo '<br>';
+            echo $rows[0]['birthday'];
 
 
         ?>
