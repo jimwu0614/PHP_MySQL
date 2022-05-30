@@ -18,8 +18,8 @@
                 <td><input type="password" name="" id=""></td>
             </tr>
             <tr>
-                <td><a href="">註冊</a></td>
-                <td><a href="">忘記</a></td>
+                <td><a href="sign.php">註冊</a></td>
+                <td><a href="forgot.php">忘記</a></td>
             </tr>
         </table>
     </form>
