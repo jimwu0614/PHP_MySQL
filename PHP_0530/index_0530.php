@@ -67,7 +67,7 @@
                     echo "<td>{$row['secondary']}</td>";
                     echo "<td>";
                     echo "<a href='edit.php?id={$row['id']}'><button>編輯</button></a>";
-                    // echo "<a href=''><button>編輯</button></a>";
+                    echo "<a href='delete.php?id={$row['id']}'><button>刪除</button></a>";
                     echo "</td>";
                 echo "</tr>";
             }
