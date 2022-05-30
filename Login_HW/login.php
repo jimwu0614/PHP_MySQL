@@ -7,7 +7,7 @@
     <title>登入</title>
 </head>
 <body>
-    <form action="chk_login" method="POST">
+    <form action="chk_login.php" method="POST">
         <table>
             <tr>
                 <td>帳號</td>
@@ -22,6 +22,10 @@
                 <td><a href="forgot.php">忘記</a></td>
             </tr>
         </table>
+        <div class='btns'>
+            <input type="submit" value="登入">
+            <input type="reset" value="重置">
+        </div>
     </form>
 </body>
 </html>
