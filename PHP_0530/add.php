@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新增學生資料</title>
     <style>
-        
-        
-        
-        
         label {
             padding: 5px auto;
             display: block;
+        }
+        label input{
+            padding:3px;
+            font-size:1.2rem;
         }
     </style>
 </head>

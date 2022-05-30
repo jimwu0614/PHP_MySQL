@@ -12,6 +12,6 @@ $pdo->query($sql);
 
 // echo $sql;
 
-header("location:index.php");
+header("location:index_0530.php");
 
 ?>

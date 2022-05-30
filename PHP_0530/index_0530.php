@@ -52,6 +52,7 @@
                 <td>科系</td>
                 <td>父母</td>
                 <td>畢業</td>
+                <td>操作</td>
             </tr>
 
         <?php
@@ -64,6 +65,10 @@
                     echo "<td>{$row['major']}</td>";
                     echo "<td>{$row['parent']}</td>";
                     echo "<td>{$row['secondary']}</td>";
+                    echo "<td>";
+                    echo "<a href='edit.php?id={$row['id']}'><button>編輯</button></a>";
+                    // echo "<a href=''><button>編輯</button></a>";
+                    echo "</td>";
                 echo "</tr>";
             }
             echo "</table>";
