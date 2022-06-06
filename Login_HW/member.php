@@ -34,6 +34,13 @@
     </form> -->
     <!--  重新導向 -->
     <!-- <button onclick="location.href='edit.php?id=<?php //echo $user['id'];?>'">編輯</button> -->
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <a class="remove" href='remove_acc.php?id=<?=$user['id'];?>'>移除個人資料</a>
+
 </body>
 
 </html>
