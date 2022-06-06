@@ -5,12 +5,12 @@
 // $pdo=new PDO($dsn,'root','');
 
 include_once "connect.php";
-
+$pw=md5($_POST['pw']);
 
 $acc=$_POST['acc'];
 
 $sql="INSERT INTO `users`(`acc` , `pw` , `birthday` , `passnote` , `email`)
-                    values('{$_POST['acc']}' , '{$_POST['pw']}' , '{$_POST['birthday']}' , '{$_POST['passnote']}' , '{$_POST['email']}');";
+                    values('{$_POST['acc']}' , '$pw' , '{$_POST['birthday']}' , '{$_POST['passnote']}' , '{$_POST['email']}');";
 
 
 $pdo->exec($sql);
