@@ -31,7 +31,8 @@
                 <td><input type="email" name="email" id=""></td>
             </tr>
         </table>
-        <div><input type="submit" value="註冊"><input type="reset" value="送出">
+        <div>
+            <input type="submit" value="註冊"><input type="reset" value="送出">
         </div>
     </form>
 </body>

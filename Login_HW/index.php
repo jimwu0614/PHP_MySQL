@@ -19,5 +19,32 @@
 </nav>    
 <h1>問券</h1>
 
+<?php
+
+// $dsn="mysql:host=localhost;chatset=utf8;dbname=member";
+// $pdo=new PDO($dsn,'root','');
+
+include_once "connect.php";
+
+
+$sql= "select * from `users` ";
+
+
+$users= $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($users as $user) {
+    echo $user['acc']."<br>";
+
+}
+
+
+
+?>
+
+
+
+
+
+
 </body>
 </html>
