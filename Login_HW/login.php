@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登入</title>
 </head>
+
 <body>
+    <?php
+
+    if (isset($_GET['error'])) {
+        echo "<h2 style='color:red;text-align:center'>{$_GET['error']}</h2>";
+    }
+    ?>
     <form action="chk_login.php" method="POST">
         <table>
             <tr>
@@ -28,4 +36,5 @@
         </div>
     </form>
 </body>
+
 </html>
