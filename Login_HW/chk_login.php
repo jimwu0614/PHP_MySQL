@@ -31,10 +31,12 @@ $pw=$_POST['pw'];
 // }
 
 $sql="SELECT count(*) FROM `users` WHERE `acc`='$acc' && `pw`='$pw'";
-$chk=$pdo->query($sql)->fetch();
+
+$chk=$pdo->query($sql)->fetchColumn();
 
 if($chk){
-    header("location:member_center.php");
+    $_SESSION['user']=$acc;
+    header("location:member.php");
 }else{
     header("location:login.php?error=帳號或密碼錯誤");
 }
