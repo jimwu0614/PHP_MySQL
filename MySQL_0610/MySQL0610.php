@@ -21,6 +21,7 @@
             margin:0.5rem;
         }
     </style>
+    
 </head>
 <body>
  <h1>自訂函式練習</h1>
