@@ -71,8 +71,40 @@
     |education|varchar(32)|--|--|--|
     |reg_date|date|--|--|--|
 * admin
+    |名稱|型態|預設值|A_I|備註|
+    |--|--|--|--|--|
+    |id|int(11)|--|true|序號|
+    |acc|varchar(12)|--|--|--|
+    |pw|varchar(16)|--|--|--|
+    |name|varchar(16)|--|--|--|
 * subjects
+    |名稱|型態|預設值|A_I|備註|
+    |--|--|--|--|--|
+    |id|int(11)|--|true|序號|
+    |subject|varchar(128)|--|--|--|
+    |type_id|int(16)|--|--|--|
+    |start|date|--|--|--|
+    |end|date|--|--|--|
+    |total|int(11)|--|--|--|
 * options
-* log
-* type
+    |名稱|型態|預設值|A_I|備註|
+    |--|--|--|--|--|
+    |id|int(11)|--|true|序號|
+    |option|varchar(128)|--|--|--|
+    |subject_id|int(16)|--|--|--|
+    |total|int(16)|--|--|--|
 
+* log
+    |名稱|型態|預設值|A_I|備註|
+    |--|--|--|--|--|
+    |id|int(11)|--|true|序號|
+    |user_id|int(11)|--|--|投票者|
+    |subject_id|int(16)|--|--|--|
+    |option_id|int(16)|--|--|--|
+    |vote_time|timestamp|--|--|--|
+
+* type
+    |名稱|型態|預設值|A_I|備註|
+    |--|--|--|--|--|
+    |id|int(11)|--|true|序號|
+    |name|varchar(128)|--|--|分類名稱|
