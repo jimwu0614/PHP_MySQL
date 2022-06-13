@@ -81,8 +81,10 @@
     |名稱|型態|預設值|A_I|備註|
     |--|--|--|--|--|
     |id|int(11)|--|true|序號|
-    |subject|varchar(128)|--|--|--|
-    |type_id|int(16)|--|--|--|
+    |subject|varchar(128)|--|--|主題描述|
+    |type_id|int(11)|--|--|--|
+    |multiple|boolean(1)|--|--|單/複選|
+    |mulit_limit|tinyint(2)|1|--|單/複選項目數|
     |start|date|--|--|--|
     |end|date|--|--|--|
     |total|int(11)|--|--|--|
@@ -90,7 +92,7 @@
     |名稱|型態|預設值|A_I|備註|
     |--|--|--|--|--|
     |id|int(11)|--|true|序號|
-    |option|varchar(128)|--|--|--|
+    |option|varchar(128)|--|--|選項描述|
     |subject_id|int(16)|--|--|--|
     |total|int(16)|--|--|--|
 
