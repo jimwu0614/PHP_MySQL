@@ -21,7 +21,7 @@
             margin:0.5rem;
         }
     </style>
-    
+
 </head>
 <body>
  <h1>自訂函式練習</h1>
@@ -33,7 +33,7 @@ $size=isset($_GET['size'])?$_GET['size']:3;
 $shap=isset($_GET['shap'])?$_GET['shap']:'正三角形';
 
 ?>
- <form action="db.php">
+ <form action="MySQL0610.php">
      大小:<input type="number" name="size" value="<?=$size;?>">&nbsp;&nbsp;
      形狀: <select name="shap">
          <option value="正三角形" <?=($shap=='正三角形')?'selected':'';?>>正三角形</option>
@@ -43,7 +43,7 @@ $shap=isset($_GET['shap'])?$_GET['shap']:'正三角形';
  </form>
 <?php
 
-starts($size,$shap);
+stars($size,$shap);
 //diamond(30);
 ?>
 
@@ -54,7 +54,7 @@ starts($size,$shap);
 $table=isset($_GET['table'])?$_GET['table']:'dept'
 
 ?>
- <form action="db.php">
+ <form action="MySQL0610.php">
      資料表:<input type="text" name="table" value="<?=$table;?>">&nbsp;&nbsp;
      
     <input type="submit" value="列出">
@@ -80,7 +80,7 @@ $id=isset($_GET['id'])?$_GET['id']:'1';
 $table=isset($_GET['table'])?$_GET['table']:'students';
 
 ?>
- <form action="db.php">
+ <form action="MySQL0610.php">
      資料表:<input type="text" name="table" value="<?=$table;?>">&nbsp;&nbsp;
      id:<input type="text" name="id" value="<?=$id;?>">&nbsp;&nbsp;
      
@@ -119,7 +119,7 @@ $table=isset($_GET['table'])?$_GET['table']:'students';
 </html>
 <?php
 //給定一個正整數的數值後，會印出對應行數的正三角形星星(依此類推可以設計印菱形，方形的函式)
-function starts($lines,$type){
+function stars($lines,$type){
     switch($type){
         case '正三角形':
             for($i=0;$i<$lines;$i++){
