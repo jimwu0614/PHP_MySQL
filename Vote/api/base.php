@@ -54,7 +54,8 @@ function all($table,...$arg){
                 $tmp[]="`$key`='$value'";
 
             }
-                    //將條件語句的陣列使用implode()來轉成字串，最後再接上第二個參數(必須為字串)
+
+            //將條件語句的陣列使用implode()來轉成字串，最後再接上第二個參數(必須為字串)
             $sql.=" WHERE ". implode(" AND " ,$tmp) . $arg[1];
         break;
     
@@ -66,4 +67,132 @@ function all($table,...$arg){
         return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     
     }
-    ?>
+/**
+ * $table - 資料表名稱 字串型式
+ * $arg 參數型態
+ *      1. 陣列 - 撈出符合陣列key = value 條件的單筆資料
+ *      2. 字串 - 必須是資料表的id，數字型態，且資料表有id這個欄位
+ */
+
+function find($table,$arg){
+    $pdo=pdo();
+
+    $sql="SELECT * FROM $table WHERE ";
+        if (is_array($arg)) {
+        
+            foreach($arg as $key => $value){
+
+                $tmp[]="`$key`='$value'";
+            
+            }
+        
+            $sql.=implode(" AND " ,$tmp);
+
+        }else{
+
+            $sql.="`id`='$arg'";
+
+        }
+
+        return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+    
+function del ($table,$arg){
+        $pdo=pdo();
+
+$sql=" DELETE FROM $table WHERE ";
+    if(is_array($arg)){
+        
+        foreach($arg as $key => $value){
+
+            $tmp[]="`$key`='$value'";
+
+        };
+
+        $sql.=implode(" AND " ,$tmp);
+
+    }  else{
+
+        $sql.=" `id`='$arg'";
+
+    } 
+
+    return $pdo->exec($sql);
+}
+function math($table,$math,$col,...$arg){
+    $pdo=pdo();
+
+    $sql=" SELECT $math (`$col`) FROM $table";
+    
+        if(!empty($arg[0])){
+
+            foreach($arg[0] as $key =>$value){
+
+                $tmp[]="`$key`='$value'";
+
+            }
+
+            $sql.=" WHERE " . implode(" AND " ,$tmp);
+
+        }
+        
+        //使用fetchColumn()來取回第一欄位的資料，因為這個SQL語法
+        //只有select 一個欄位的資料，因此這個函式會直接回傳計算的結果出來
+        return $pdo->query($sql)->fetchColumn();
+}
+
+// $url - 要導向的檔案路徑及檔名
+
+
+function  to($url){
+
+    header("location:".$url);
+
+}
+
+
+
+//$sql - SQL語句字串，取出符合SQL語句的全部資料
+
+
+function q($sql){
+    $pdo=pdo();
+
+    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+}
+
+function save($table,$arg){
+    $pdo=pdo();
+    $sql='';
+    if(isset($arg['id'])){
+        //update
+        
+        foreach($arg as $key =>$value){
+            
+            if ($key!='id'){
+
+                $tmp[]="`$key`='$value'";
+            }
+
+        }
+    //建立更新的sql語法
+        $sql.="UPDATE $table SET ".implode(" AND " ,$tmp)." WHERE `id`='{$arg['id']}'";
+
+    }else{
+        //insert
+        $cols=implode("`,`",array_keys($arg));
+        $values=implode("','",$arg);
+
+        //建立新增的sql語法
+        $sql="INSERT INTO $table (`$cols`) VALUES('$values')";
+
+    }
+    
+    return $pdo->exec($sql);
+
+}
+
+?>

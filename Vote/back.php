@@ -1,4 +1,5 @@
 <?php
+
 include_once ".api/base.php";
 ?>
 <!DOCTYPE html>
@@ -24,12 +25,17 @@ include_once ".api/base.php";
     }
     if (isset($file) && file_exists($file)) {
         include $file;
-    
     } else {
     ?>
     <button class="btn btn-primary" onclick="location.href='?do=add_vote'">新增投票</button>
     
-    <div>投票列表</div>
+    <div>
+        <ul>
+            <?php
+            $subjects=all('subjects')
+            ?>
+        </ul>
+    </div>
 <?php
 }
 ?>
