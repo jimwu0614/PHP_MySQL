@@ -32,9 +32,21 @@ include_once ".api/base.php";
     <div>
         <ul>
             <?php
-            $subjects=all('subjects')
+            //使用all()函式來取得資料表subjects中的所有資料，請參考base.php中的函式all($table,...$arg)
+            $subjects=all('subjects');
+
+            //使用迴圈將每一筆資料的內容顯示在畫面上
+            foreach($subjects as $subject){
+                echo "<li class='list-items'>";
+                echo $subject['subject'];
+                echo "<a class='edit' href='?do=edit&id={$subject['id']}'>編輯</a>";
+                echo "<a class='del' href='?do=del&id={$subject['id']}'>刪除</a>";
+                echo "</li>";
+            }
+
             ?>
         </ul>
+        
     </div>
 <?php
 }
