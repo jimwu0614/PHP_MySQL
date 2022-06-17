@@ -48,3 +48,19 @@ ul{
     background: rgb(255, 111, 111);
     color:rgb(255, 0, 0);
 }
+.list-header{
+    display:flex;
+    justify-content: space-evenly;
+    text-align: center;
+
+}
+.list-header div{
+    width:calc(100% / 6);
+    padding:0.5rem 1rem;
+    background:blue;
+    color:#ccc;
+}
+.list-items div{
+    width:calc(100% / 6);
+    padding:0.5rem 1rem;
+}

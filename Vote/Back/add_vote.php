@@ -1,4 +1,4 @@
-<form action="../api/add_vote.php" method="post">
+<form action="./api/add_vote.php" method="post">
     <div>
         <label for="subject">投票主題：</label>
         <input type="text" name="subject" id="subject">
@@ -6,7 +6,8 @@
     </div>
     <div id="options">
         <div>
-            <label>選項:</label><input type="text" name="option[]">
+            <label>選項:</label>
+            <input type="text" name="option[]">
         </div>
     </div>
     <input type="submit" value="新增">
