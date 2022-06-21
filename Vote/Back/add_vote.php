@@ -1,5 +1,19 @@
 <form action="./api/add_vote.php" method="post">
     <div>
+        <select name="types" id="types">
+        <?php
+            $types=all("types");
+            foreach($types as $type){
+                ?>
+                <option value="<?=$type['id']?>">
+                <?=$type['name']?>
+                </option>
+                <?php
+            }
+        ?>
+        </select>
+    </div>
+    <div>
         <label for="subject">投票主題：</label>
         <input type="text" name="subject" id="subject">
         <input type="button" value="新增選項" onclick="more()">

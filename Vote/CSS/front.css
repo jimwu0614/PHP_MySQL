@@ -1,7 +1,8 @@
 #container{
-    min-height: calc(100vh - 300px - 3rem);
-}
 
+    min-height: calc(100vh - 300px - 3rem);
+    
+}
 .list{
     margin:1rem 0 1rem 6rem;
 }
@@ -19,6 +20,9 @@
     padding:0.5rem 1rem;
     background:blue;
     color:#ccc;
+}
+.list-header div a{
+    color:#ccc
 }
 .list-items div{
     width:calc(100% / 5);
@@ -38,3 +42,19 @@
     background-color: rgb(216, 255, 237);
     cursor: pointer;
 } 
+
+.result-table{
+    border-collapse: collapse;
+    box-shadow: 0 0 6px #bbb;
+}
+.result-table td{
+    padding: 0.25rem;
+    border:1px solid #ccc;
+}
+
+#types{
+    padding:0.25rem 0.5rem;
+    font-size:1.25rem;
+    border:0;
+    border-bottom:2px solid orange;
+}

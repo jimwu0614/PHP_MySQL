@@ -32,5 +32,5 @@ if (isset($_POST['opt'])){
         save("logs", $log);
     }
 }
-to("../index.php")
+to("../index.php?do=vote_result&id={$option['subject_id']}");
 ?>
