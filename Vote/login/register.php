@@ -1,28 +1,45 @@
-    <h1>Register</h1>
-    <form action="./add_member.php" method="post" >
-        <table>
-            <tr>
-                <td>帳號</td>
-                <td><input type="text" name="acc"></td>
-            </tr>
-            <tr>
-                <td>密碼</td>
-                <td><input type="password" name="pw" id=""></td>
-            </tr>
-            <tr>
-                <td>生日</td>
-                <td><input type="date" name="birthday" id=""></td>
-            </tr>
-            <tr>
-                <td>密碼提示</td>
-                <td><input type="text" name="passnote" id=""></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="email" name="email" id=""></td>
-            </tr>
-        </table>
-        <div>
-            <input type="submit" value="註冊"><input type="reset" value="送出">
+<div class="login-box">
+    <h2>Register</h2>
+    <form action="./add_member.php" method="post">
+
+        <div class="user-box">
+            <input type="text" name="acc" required="">
+            <label>Username</label>
         </div>
+
+        <div class="user-box">
+            <input type="password" name="pw" required="">
+            <label>Password</label>
+        </div>
+
+        <div class="user-box">
+            <input type="date" name="birthday" required="">
+            <label>Birthday</label>
+        </div>
+
+        <div class="user-box">
+            <input type="text" name="gender" required="">
+            <label>Gender</label>
+        </div>
+
+        <div class="user-box">
+            <input type="text" name="gender" required="">
+            <label>Gender</label>
+        </div>
+
+        <div class="user-box">
+            <input type="email" name="email" required="">
+            <label>E-mail</label>
+        </div>
+
+        <div class='btns'>
+            <input type="submit" value="Submit" class="but">
+            <input type="reset" value="Reset" class="but">
+        </div>
+
+        <div class="operate">
+            <button onclick="location.href='?do=login'">Back</button>
+        </div>
+
     </form>
+</div>

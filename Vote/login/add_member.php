@@ -9,8 +9,8 @@ $pw=md5($_POST['pw']);
 
 $acc=$_POST['acc'];
 
-$sql="INSERT INTO `users`(`acc` , `pw` , `birthday` , `passnote` , `email`)
-                    values('{$_POST['acc']}' , '$pw' , '{$_POST['birthday']}' , '{$_POST['passnote']}' , '{$_POST['email']}');";
+$sql="INSERT INTO `users`(`acc` , `pw` , `birthday` , `gender` , `email`)
+                    values('{$_POST['acc']}' , '$pw' , '{$_POST['birthday']}' , '{$_POST['gender']}' , '{$_POST['email']}');";
 
 
 $pdo->exec($sql);
