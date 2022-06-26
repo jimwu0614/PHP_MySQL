@@ -11,12 +11,9 @@ width:100%;
 height:300px;
 position:relative;
 }
-#header .slider{
-height:100%;
-background: blue;
-}
-#header nav{
-    position:absolute;
+
+#navbar nav{
+    position:relative;
     width:100%;
     min-width:1000px;
     padding:0.25rem 7.5%;

@@ -9,6 +9,8 @@
     <title>Login</title>
     <link rel="stylesheet" href="./css/basic.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./CSS/slider.css">
+
     <style>
 
     </style>
@@ -27,9 +29,20 @@
     }
     ?>
     <div class="img">
-        <div class="login-box">
-            <h2>Login</h2>
-            <form action="/login/chk_login.php" method="POST">
+        <div class="container">
+            <?php
+                if (isset($_GET['do'])) {
+                    $file = './login/' . $_GET['do'] . ".php";
+                }
+                if (isset($file) && file_exists($file)) {
+                    include $file;
+                } else {
+                    include "./login/login.php";
+                }
+            ?>
+
+            <!-- <h2>Login</h2>
+            <form action="./login/chk_login.php" method="POST">
                 <div class="user-box">
                     <input type="text" name="" required="">
                     <label>Username</label>
@@ -39,10 +52,14 @@
                     <label>Password</label>
                 </div>
                 <div class='btns'>
-                    <input type="submit" value="submit" class="but">
-                    <input type="reset" value="reset" class="but">
+                    <input type="submit" value="Submit" class="but">
+                    <input type="reset" value="Reset" class="but">
                 </div>
-            </form>
+                <div class="operate">
+                <p class="message"> <a href="./login/sign.php">Not Registered?</a></p>
+                <p class="message"> <br><a href="./login/forgot.php">Forget Password?</a></p>
+                </div>
+            </form> -->
 
         </div>
     </div>

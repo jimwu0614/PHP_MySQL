@@ -12,11 +12,18 @@ include_once "./api/base.php";
     <title>Voting_Menegement</title>
     <link rel="stylesheet" href="./css/basic.css">
     <link rel="stylesheet" href="./css/back.css">
+    <link rel="stylesheet" href="./CSS/slider.css">
+
 </head>
 
 <body>
     <div id="header">
-        <?php include "./layout/header.php";
+        <?php 
+        include "./layout/header.php";
+        ?>
+    </div>
+    <div id="navbar">
+        <?php 
         include "./layout/nav_back.php";
         ?>
     </div>
