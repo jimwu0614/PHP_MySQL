@@ -19,11 +19,11 @@
         <table>
             <tr>
                 <td>帳號</td>
-                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="acc" id=""></td>
             </tr>
             <tr>
                 <td>密碼</td>
-                <td><input type="password" name="" id=""></td>
+                <td><input type="password" name="pw" id=""></td>
             </tr>
             <tr>
                 <td><a href="sign.php">註冊</a></td>

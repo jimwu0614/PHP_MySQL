@@ -5,7 +5,8 @@
 // $pdo=new PDO($dsn,'root','');
 
 include_once "connect.php";
-$pw=md5($_POST['pw']);
+// $pw=md5($_POST['pw']);
+$pw=$_POST['pw'];
 
 $acc=$_POST['acc'];
 

@@ -10,7 +10,11 @@
 
 include "connect.php";
 $acc=$_POST['acc'];
-$pw=md5($_POST['pw']);
+// $pw=md5($_POST['pw']);
+$pw=$_POST['pw'];
+
+
+
 
 /* if($acc==資料表中的acc && $pw==資料表中的pw){
     //登入成功->會員中心
@@ -33,6 +37,11 @@ $pw=md5($_POST['pw']);
 $sql="SELECT count(*) FROM `users` WHERE `acc`='$acc' && `pw`='$pw'";
 
 $chk=$pdo->query($sql)->fetchColumn();
+
+// echo $sql;
+// echo "<hr>";
+// echo $chk;
+
 
 if($chk){
     $_SESSION['user']=$acc;

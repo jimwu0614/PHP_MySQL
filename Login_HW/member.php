@@ -13,7 +13,9 @@
         <a href="logout.php">登出</a>
     </nav>
     <h1>會員中心</h1>
-    <?php session_start() ?>
+    <?php 
+    include "connect.php";
+    ?>
     <h2>歡迎<?= $_SESSION['user'] ?></h2>
     <?php
     $sql = "select * from `users` where acc='{$_SESSION['user']}'";
