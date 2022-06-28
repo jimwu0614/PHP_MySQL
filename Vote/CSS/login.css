@@ -109,62 +109,37 @@ form {
     box-shadow: #ffffff;
 }
 
+.btns button {
+    width: 107px;
+    height: 50px;
+    font-size: xx-large;
+    border-radius: 20px;
+    box-shadow: #ffffff;
+}
+
 .but {
     border: none;
     background: rgb(57, 160, 230);
     background: linear-gradient(0deg, rgb(74, 169, 233) 0%, rgb(77, 124, 253) 100%);
     color: #fff;
     overflow: hidden;
+    opacity: 0.8;
+    /* width: 107px; */
+    /* height: 50px; */
 }
 
 .but:hover {
     text-decoration: none;
     color: #fff;
+    opacity: 1;
 }
 
-.but:before {
-    position: absolute;
-    content: '';
-    display: inline-block;
-    top: -180px;
-    left: 0;
-    width: 30px;
-    height: 100%;
-    background-color: #fff;
-    animation: shiny-btn1 3s ease-in-out infinite;
-}
-
-.but:hover {
-    opacity: .7;
-}
 
 .but:active {
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .3),
         -4px -4px 6px 0 rgba(116, 125, 136, .2),
         inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
         inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
-}
-
-@-webkit-keyframes shiny-btn1 {
-    0% {
-        -webkit-transform: scale(0) rotate(45deg);
-        opacity: 0;
-    }
-
-    80% {
-        -webkit-transform: scale(0) rotate(45deg);
-        opacity: 0.5;
-    }
-
-    81% {
-        -webkit-transform: scale(4) rotate(45deg);
-        opacity: 1;
-    }
-
-    100% {
-        -webkit-transform: scale(50) rotate(45deg);
-        opacity: 0;
-    }
 }
 
 .operate {

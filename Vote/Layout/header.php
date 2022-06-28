@@ -2,24 +2,28 @@
 <div id="captioned-gallery">
 	<figure class="slider">
 		<figure>
-			<img src="./img/hobbiton-lake.jpg" alt>
-			<!-- <figcaption>Hobbiton, New Zealand</figcaption> -->
+			<img src="./img/meme01.jpg" alt>
 		</figure>
+
 		<figure>
-			<img src="./img/wanaka-drowned-tree.jpg" alt>
-			<!-- <figcaption>Wanaka, New Zealand</figcaption> -->
+			<img src="./img/meme02.jpg" alt>
 		</figure>
+
 		<figure>
-			<img src="./img/utah-peak.jpg" alt>
-			<!-- <figcaption>Utah, United States</figcaption> -->
+			<img src="./img/meme03.jpg" alt>
 		</figure>
+
 		<figure>
-			<img src="./img/bryce-canyon-utah.jpg" alt>
-			<!-- <figcaption>Bryce Canyon, Utah, United States</figcaption> -->
+			<img src="./img/meme04.jpg" alt>
 		</figure>
+
 		<figure>
-			<img src="./img/hobbiton-lake.jpg" alt>
-			<!-- <figcaption>Hobbiton, New Zealand</figcaption> -->
+			<img src="./img/meme05.jpg" alt>
 		</figure>
+
+		<figure>
+			<img src="./img/meme01.jpg" alt>
+		</figure>
+
 	</figure>
 </div>

@@ -2,10 +2,16 @@
 session_start();
 date_default_timezone_set('Asia/Taipei');
 
+$dsn="mysql:host=localhost;charset=utf8;dbname=vote";
+$pdo=new PDO($dsn,'root','');
+
+
 function pdo(){
     $dsn="mysql:host=localhost;charset=utf8;dbname=vote";
     return new PDO ($dsn,'root','');
 }
+
+
 
 //  $table - 資料表名稱 字串型式
 //  ...$arg - 參數型態

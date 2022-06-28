@@ -8,7 +8,7 @@
 //     header("location:login.php");
 // }
 
-include_once "./api/base.php";
+include_once "../api/base.php";
 $acc=$_POST['acc'];
 $pw=md5($_POST['pw']);
 

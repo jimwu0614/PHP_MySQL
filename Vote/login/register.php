@@ -1,10 +1,10 @@
 <div class="login-box">
     <h2>Register</h2>
-    <form action="./add_member.php" method="post">
+    <form action="./login/add_member.php" method="post">
 
         <div class="user-box">
             <input type="text" name="acc" required="">
-            <label>Username</label>
+            <label>Account</label>
         </div>
 
         <div class="user-box">
@@ -13,18 +13,29 @@
         </div>
 
         <div class="user-box">
+            <input type="text" name="name" required="">
+            <label>Name</label>
+        </div>
+
+        <div class="user-box">
             <input type="date" name="birthday" required="">
             <label>Birthday</label>
         </div>
 
         <div class="user-box">
-            <input type="text" name="gender" required="">
+            <!-- <input type="text" name="gender" required=""> -->
+            <select name="gender" id="">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br>
+            <br>
             <label>Gender</label>
         </div>
 
         <div class="user-box">
-            <input type="text" name="gender" required="">
-            <label>Gender</label>
+            <input type="text" name="addr" required="">
+            <label>Address</label>
         </div>
 
         <div class="user-box">
@@ -33,12 +44,13 @@
         </div>
 
         <div class='btns'>
-            <input type="submit" value="Submit" class="but">
+            <button class="but" onclick="location.href='?do=login'">Submit</button>
+            <!-- <input type="submit" value="Submit" class="but"> -->
             <input type="reset" value="Reset" class="but">
         </div>
 
         <div class="operate">
-            <button onclick="location.href='?do=login'">Back</button>
+            <button type="button" onclick="location.href='?do=login'">Back</button>
         </div>
 
     </form>
