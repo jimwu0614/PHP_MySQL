@@ -9,8 +9,10 @@
 // }
 
 include_once "../api/base.php";
+$adminAcc=$_POST['acc'];
 $acc=$_POST['acc'];
 
+$adminPW=($_POST['pw']);
 $pw=md5($_POST['pw']);
 
 // $name=$_POST['name'];
@@ -44,15 +46,16 @@ echo $sql;
 echo "<hr>";
 echo $chk;
 
-
-if($chk){
+if($adminAcc == 'admin' && $adminPW == "admin"){
+    header("location:../back.php");
+}elseif($chk){
     $_SESSION['name']=$acc;
-    header("location:member.php");
+    header("location:../index.php");
 }else{
-    header("location:login.php?error=帳號或密碼錯誤");
+    header("location:../login.php?error=帳號或密碼錯誤");
 }
 
 
 
 ?>
-<a href="./login.php">123123</a>
+<!-- <a href="./login.php">123123</a> -->

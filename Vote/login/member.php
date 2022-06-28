@@ -1,5 +1,5 @@
 <?php
-include_once "../api/base.php";
+include_once "./api/base.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@ include_once "../api/base.php";
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <a class="remove" href='remove_acc.php?id=<?=$user['id'];?>'>移除個人資料</a>
+    
 
 </body>
 
