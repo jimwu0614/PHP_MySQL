@@ -44,7 +44,7 @@
         </div>
 
         <div class='btns'>
-            <button class="but" onclick="location.href='?do=login'">Submit</button>
+            <button class="but" onclick="location.href='?do=add_member'">Submit</button>
             <!-- <input type="submit" value="Submit" class="but"> -->
             <input type="reset" value="Reset" class="but">
         </div>

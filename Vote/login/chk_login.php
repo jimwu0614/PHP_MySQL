@@ -13,7 +13,7 @@ $acc=$_POST['acc'];
 
 $pw=md5($_POST['pw']);
 
-$name=$_POST['name'];
+// $name=$_POST['name'];
 // $pw=$_POST['pw'];
 
 
@@ -55,3 +55,4 @@ if($chk){
 
 
 ?>
+<a href="./login.php">123123</a>

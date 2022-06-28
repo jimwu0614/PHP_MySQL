@@ -1,23 +1,27 @@
 <?php 
 
 
-// $dsn="mysql:host=localhost;charset=utf8;dbname=member";
-// $pdo=new PDO($dsn,'root','');
+$dsn="mysql:host=localhost;charset=utf8;dbname=vote";
+$pdo=new PDO($dsn,'root','');
 
-include_once "./api/base.php";
+// include_once "../api/base.php";
 
 
 $acc=$_POST['acc'];
 
 $sql="UPDATE `users`
-      SET    `pw` = '',
-             `birthday` = '{$_POST['birthday']}'
-             `passsnote` = '{$_POST['passsnote']}'
+      SET    `pw` = '{$_POST['pw']}' ,
+             `name` = '{$_POST['name']}' ,
+             `birthday` = '{$_POST['birthday']}' ,
+             `addr` = '{$_POST['addr']}' ,
              `email` = '{$_POST['email']}'
       WHERE  `id`='{$_POST['id']}'";
 
 
 $pdo->exec($sql);
+
+echo $sql;
+
 
 header('location:login.php');
 

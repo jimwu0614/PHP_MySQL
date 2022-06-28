@@ -20,7 +20,10 @@ $sql="INSERT INTO `users`(`acc` , `pw` , `name` , `birthday` , `gender` , `addr`
 
 $pdo->exec($sql);
 
-// header('location:login.php');
+
+
+header('location:login.php');
 to('login.php');
 
 ?>
+<a href="./login.php">123123</a>

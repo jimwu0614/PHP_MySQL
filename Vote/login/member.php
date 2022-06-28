@@ -13,7 +13,8 @@ include_once "../api/base.php";
 
 <body>
     <nav>
-        <a href="logout.php">登出</a>
+        <a href="./logout.php">登出</a>
+        <a href="../index.php">首頁</a>
     </nav>
     <h1>會員中心</h1>
     
@@ -22,15 +23,17 @@ include_once "../api/base.php";
     $sql = "select * from `users` where acc='{$_SESSION['name']}'";
     $user = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     echo "<hr>";
-    echo '序號:' . $user['id'] . "<br>";
-    echo '帳號:' . $user['acc'] . "<br>";
+    echo 'ID number:' . $user['id'] . "<br>";
+    echo 'Account:' . $user['acc'] . "<br>";
     echo '密碼:**********<br>';
- 
-    echo '生日:' . $user['birthday'] . "<br>";
-    echo 'email:' . $user['email'] . "<br>";
+    echo 'Name:' . $user['name'] . "<br>";
+    echo 'Birthday:' . $user['birthday'] . "<br>";
+    echo 'Gender:' . $user['gender'] . '<br>';
+    echo 'Address:' . $user['addr'] . "<br>";
+    echo 'E-mail:' . $user['email'] . "<br>";
 
     ?>
-    <button><a href='edit.php?id=<?=$user['id'];?>'>編輯</a></button>
+    <a href='edit.php?id=<?=$user['id'];?>'><button>編輯</button></a>
  <!-- <form action='edit.php' method='post'>
         <input type="hidden" name="id" value="<?php //echo $user['id'];?>">
         <input type="submit" value="編輯">

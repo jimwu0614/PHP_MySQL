@@ -14,18 +14,22 @@
 </head>
 
 <body>
+    <!-- 頁首輪播器 -->
     <div id="header">
         <?php
         include "./layout/header.php";
         ?>
     </div>
     
+    <!-- 選單 -->
     <div id="navbar">
         <?php
         include "./layout/nav_front.php";
         ?>
     </div>
 
+
+    <!-- 主頁 -->
     <div id="container">
         <?php
         //把別的頁面顯示於container,同iframe
