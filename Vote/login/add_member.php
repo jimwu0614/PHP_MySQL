@@ -9,8 +9,8 @@ include_once "../api/base.php";
 $dsn="mysql:host=localhost;charset=utf8;dbname=vote";
 $pdo=new PDO($dsn,'root','');
 
-// $pw=md5($_POST['pw']);
-$pw=$_POST['pw'];
+$pw=md5($_POST['pw']);
+// $pw=$_POST['pw'];
 
 $acc=$_POST['acc'];
 

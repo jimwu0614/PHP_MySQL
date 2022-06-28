@@ -1,5 +1,13 @@
 <div class="login-box">
     <h2>Login</h2>
+
+    <?php
+    if(!empty($_GET['error'])){
+        echo "<h3 style='color:red;background-color: antiquewhite;'>{$_GET['error']}</h3>";
+        echo "<br>";
+    }
+    ?>
+
     <form action="./login/chk_login.php" method="POST">
 
         <div class="user-box">
@@ -13,8 +21,8 @@
         </div>
 
         <div class='btns'>
-            <!-- <button class="but" onclick="location.href='?do=chk_login'">Login</button>  -->
-            <input type="submit" value="Login" class="but">
+            <button class="but" onclick="location.href='?do=chk_login'">Login</button> 
+            <!-- <input type="submit" value="Login" class="but"> -->
             <input type="reset" value="Reset" class="but">
         </div>
 

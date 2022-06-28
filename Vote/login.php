@@ -23,11 +23,12 @@
         ?>
     </div>
     <?php
+    // 若帳號錯誤會給錯誤訊息   已移至/login/login.php
 
-    if (isset($_GET['error'])) {
-        echo "<h2 style='color:red;text-align:center'>{$_GET['error']}</h2>";
-    }
-    ?>
+    // if (isset($_GET['error'])) {
+    //     echo "<h2 style='color:red;text-align:center'>{$_GET['error']}</h2>";
+    // }
+    // ?>
     <div class="img">
         <div class="container">
             <?php
