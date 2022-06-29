@@ -6,11 +6,13 @@ $pdo=new PDO($dsn,'root','');
 
 // include_once "../api/base.php";
 
+$pw=md5($_POST['pw']);
+// $pw=$_POST['pw'];
 
 $acc=$_POST['acc'];
 
 $sql="UPDATE `users`
-      SET    `pw` = '{$_POST['pw']}' ,
+      SET    `pw` = '$pw' ,
              `name` = '{$_POST['name']}' ,
              `birthday` = '{$_POST['birthday']}' ,
              `addr` = '{$_POST['addr']}' ,
@@ -23,7 +25,7 @@ $pdo->exec($sql);
 echo $sql;
 
 
-header('location:login.php');
+header('location:../login.php');
 
 
 ?>

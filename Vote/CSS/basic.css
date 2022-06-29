@@ -8,6 +8,7 @@
 
 #header{
 width:100%;
+min-width: 1000px;
 height:300px;
 position:relative;
 }

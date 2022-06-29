@@ -2,6 +2,7 @@
     <h2>Register</h2>
     <form action="./login/add_member.php" method="post">
 
+        <!-- 輸入區 -->
         <div class="user-box">
             <input type="text" name="acc" required="">
             <label>Account</label>
@@ -42,6 +43,10 @@
             <input type="email" name="email" required="">
             <label>E-mail</label>
         </div>
+
+
+
+        <!-- 按鈕 -->
 
         <div class='btns'>
             <button class="but" onclick="location.href='?do=add_member'">Submit</button>

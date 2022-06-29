@@ -47,10 +47,11 @@ echo "<hr>";
 echo $chk;
 
 if($adminAcc == 'admin' && $adminPW == "admin"){
+    $_SESSION['name']=$adminAcc;
     header("location:../back.php");
 }elseif($chk){
     $_SESSION['name']=$acc;
-    header("location:../index.php");
+    header("location:./login_ok.php");
 }else{
     header("location:../login.php?error=帳號或密碼錯誤");
 }

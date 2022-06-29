@@ -10,12 +10,13 @@
         <input type="password" name="pw"><br>
         <!-- <input type="submit" value="檢查"> -->
 
-        <div class="operate">
-            <button onclick="location.href='?do=resetPW'">SUBMIT</button>
+        <div class='btns'>
+            <button class="but" onclick="location.href='?do=resetPW'">Submit</button>
         </div>
+
         
         <div class="operate">
-            <button type="button" onclick="location.href='?do=login'">Back</button>
+        <button type="button" onclick="location.href='?do=login'">Back</button>
         </div>
 
     </form>
