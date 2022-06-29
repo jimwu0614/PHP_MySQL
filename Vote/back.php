@@ -12,7 +12,7 @@ include_once "./api/base.php";
     <title>Voting_Menegement</title>
     <link rel="stylesheet" href="./css/basic.css">
     <link rel="stylesheet" href="./css/back.css">
-    <link rel="stylesheet" href="./CSS/slider.css">
+    <link rel="stylesheet" href="./css/slider.css">
 
 </head>
 
