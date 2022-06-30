@@ -19,75 +19,122 @@ if (isset($_GET['filter'])) {
 
 
 ?>
-<!-- 主題分類選單 -->
-<div>
-    <label for="types">Voting Type</label>
-    <select name="types" id="types" onchange="location.href=`?filter=${this.value}<?= $p; ?><?= $querystr; ?>`">
-        <option value="0">ALL</option>
-        <?php
-        $types = all("types");
-        foreach ($types as $type) {
-            $selected = (isset($_GET['filter']) && $_GET['filter'] == $type['id']) ? 'selected' : '';
-            echo "<option value='{$type['id']}' $selected>";
-            echo $type['name'];
-            echo "</option>";
-        }
-        ?>
-    </select>
-</div>
-<!-- 主題分類選單結束 -->
+<header>
+    <label style="text-align: left;" for="types">Voting Type</label>
+    <label style="text-align: right;">Order</label>
+    <!-- 主題分類選單 -->
+    <div style="text-align: left;">
+        <select name="types" id="types" onchange="location.href=`?filter=${this.value}<?= $p; ?><?= $querystr; ?>`">
+            <option value="0">ALL</option>
+            <?php
+            $types = all("types");
+            foreach ($types as $type) {
+                $selected = (isset($_GET['filter']) && $_GET['filter'] == $type['id']) ? 'selected' : '';
+                echo "<option value='{$type['id']}' $selected>";
+                echo $type['name'];
+                echo "</option>";
+            }
+            ?>
+        </select>
+    <!-- 主題分類選單結束 -->
+    </div>
+    
+
+    <!-- 表頭排序區 -->
+    
+    <div  class="order">
+        <b>
+    <?php
+                if (isset($_GET['type']) && $_GET['type'] == 'asc') {
+    ?>
+                    <div>
+                        <a href="?order=multiple&type=desc<?= $p; ?><?= $queryfilter; ?>">
+                            <i class="fa-solid fa-circle-dot"></i>
+                            <span class="navTex">Single</span>
+                        </a>
+                    </div>
+    <?php
+                } else {
+    ?>
+                    <div>
+                        <a href="?order=multiple&type=asc<?= $p; ?><?= $queryfilter; ?>">                            
+                            <i class="fa-solid fa-square-check"></i>
+                            <span class="navTex">Multiple</span>
+                        </a>
+                    </div>
+    <?php
+                }
+    ?>
+    <?php
+                if (isset($_GET['type']) && $_GET['type'] == 'asc') {
+    ?>
+                    <div>
+                        <a href="?order=end&type=desc<?= $p; ?><?= $queryfilter; ?>">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span class="navTex">Duration</span>
+                        </a>
+                    </div>
+    <?php
+                } else {
+    ?>
+                    <div>
+                        <a href="?order=end&type=asc<?= $p; ?><?= $queryfilter; ?>">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span class="navTex">Duration</span>
+                        </a>
+                    </div>
+    <?php
+                }
+    ?>
+    <?php
+                if (isset($_GET['type']) && $_GET['type'] == 'asc') {
+    ?>
+                    <div>
+                        <a href="?order=remain&type=desc<?= $p; ?><?= $queryfilter; ?>">
+                            <i class="fa-solid fa-hourglass"></i>
+                            <span class="navTex">Time Left</span>
+                        </a>
+                    </div>
+    <?php
+                } else {
+    ?>
+                    <div>
+                        <a href="?order=remain&type=asc<?= $p; ?><?= $queryfilter; ?>">
+                            <i class="fa-solid fa-hourglass"></i>
+                            <span class="navTex">Time Left</span>
+                        </a>
+                    </div>
+    <?php
+                }
+    ?>
+    <?php
+                if (isset($_GET['type']) && $_GET['type'] == 'asc') {
+    ?>
+                    <div>
+                        <a href='?order=total&type=desc<?= $p; ?><?= $queryfilter; ?>'>
+                            <i class="fa-solid fa-users"></i>
+                            <span class="navTex">Hit</span>
+                        </a>
+                    </div>
+    <?php
+                } else {
+    ?>
+                    <div>
+                        <a href='?order=total&type=asc<?= $p; ?><?= $queryfilter; ?>'>
+                            <i class="fa-solid fa-users"></i>
+                            <span class="navTex">Hit</span>
+                        </a>
+                    </div>
+    <?php
+                }
+    ?>
+        </b>
+    </div>
+    <!-- 表頭排序區結束 -->
+</header>
 
 
-<div>
     <ul id='voteList'>
-        <li id='voteList-header'>
-            <div>投票主題</div>
-<?php
-            if (isset($_GET['type']) && $_GET['type'] == 'asc') {
-?>
-                <div><a href="?order=multiple&type=desc<?= $p; ?><?= $queryfilter; ?>">單/複選題</a></div>
-<?php
-            } else {
-?>
-                <div><a href="?order=multiple&type=asc<?= $p; ?><?= $queryfilter; ?>">單/複選題</a></div>
-<?php
-            }
-?>
-<?php
-            if (isset($_GET['type']) && $_GET['type'] == 'asc') {
-?>
-                <div><a href="?order=end&type=desc<?= $p; ?><?= $queryfilter; ?>">投票期間</a></div>
-<?php
-            } else {
-?>
-                <div><a href="?order=end&type=asc<?= $p; ?><?= $queryfilter; ?>">投票期間</a></div>
-<?php
-            }
-?>
-<?php
-            if (isset($_GET['type']) && $_GET['type'] == 'asc') {
-?>
-                <div><a href="?order=remain&type=desc<?= $p; ?><?= $queryfilter; ?>">剩餘天數</a></div>
-<?php
-            } else {
-?>
-                <div><a href="?order=remain&type=asc<?= $p; ?><?= $queryfilter; ?>">剩餘天數</a></div>
-<?php
-            }
-?>
-<?php
-            if (isset($_GET['type']) && $_GET['type'] == 'asc') {
-?>
-                <div><a href='?order=total&type=desc<?= $p; ?><?= $queryfilter; ?>'>投票人數</a></div>
-<?php
-            } else {
-?>
-                <div><a href='?order=total&type=asc<?= $p; ?><?= $queryfilter; ?>'>投票人數</a></div>
-<?php
-            }
-?>
-
-        </li>
         <?php
         //偵測是否需要排序
         $orderStr = '';
@@ -171,4 +218,3 @@ if (isset($_GET['filter'])) {
 
         ?>
     </div>
-</div>

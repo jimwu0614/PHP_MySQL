@@ -9,9 +9,10 @@
     <title>VotingCenter</title>
     <!--使用拆分css檔案的方式來區分共用的css設定及前後台不同的css-->
     <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/front.css">
     <link rel="stylesheet" href="./css/slider.css">
     <link rel="stylesheet" href="./css/aside.css">
-    <link rel="stylesheet" href="./css/front.css">
+    <link rel="stylesheet" href="./css/section.css">
     <link rel="stylesheet" href="./css/member.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css" integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -26,6 +27,7 @@
 
     <!-- 選單 -->
     <section>
+        
         <aside>
             <nav class="navbar">
                 <ul>
@@ -37,7 +39,7 @@
                         <li class="list active" data-color="rgba(245, 59, 87, 0.7)">
                             <a href="./index.php">
                                 <span class="icon"><i class="fa-solid fa-check-to-slot"></i></span>
-                                <span class="navTex">Go Voting</span>
+                                <span class="navTex">Go Voting</span>                                
                             </a>
                         </li>
                         <li class="list" data-color="rgba(15, 188, 249, 0.7)">
@@ -81,8 +83,8 @@
                     ?>
                 </ul>
             </nav>
-                </aside>
-        <!-- 主頁 -->
+        </aside>
+        <!-- 主頁顯示區 -->
         <div class="container">
             <?php
             //把別的頁面顯示於container,同iframe
@@ -96,6 +98,7 @@
             }
             ?>
         </div>
+        <!-- 主頁顯示區結束 -->
     </section>
     <footer>
         <?php include "./layout/footer.php"; ?>

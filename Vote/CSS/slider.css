@@ -22,9 +22,6 @@
 100% { left: -400%; } */
 }
 
-*{
-    text-align: center;
-}
 div#captioned-gallery { 
   margin: 0 auto;
   width: 80%; 
