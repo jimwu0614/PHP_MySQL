@@ -9,7 +9,9 @@ section {
 aside{
     width: 400px;
     transition: 0.9s;
-    background-color: rgba(241, 161, 40, 0.1);
+    background-color: rgba(133, 130, 125, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(2px);
 }
 /* 底部白色那一條 */
 .navbar {

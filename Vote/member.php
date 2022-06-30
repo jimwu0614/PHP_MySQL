@@ -25,7 +25,7 @@ include_once "./api/base.php";
         <a href="./index.php">VotingCenter</a>
     </nav>
 
-    <div class="login-box">
+    <div class="login-box" >
         <h1>Member Center</h1>
 
         <h2>Welcome<?= $_SESSION['name'] ?></h2>

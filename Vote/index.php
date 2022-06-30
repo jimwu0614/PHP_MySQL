@@ -92,10 +92,10 @@
             }
             ?>
         </div>
-        <div>
-            <?php include "./layout/footer.php"; ?>
-        </div>
     </section>
+    <footer>
+        <?php include "./layout/footer.php"; ?>
+    </footer>
 
     <script>
         //根據游標   圈圈換位置
