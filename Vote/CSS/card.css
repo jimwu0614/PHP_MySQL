@@ -1,0 +1,156 @@
+/* source:  https://www.youtube.com/watch?v=LlEh6UJ4aMs */
+
+
+
+/* 未拉開的藍色長方形 "card" */
+.card{
+    position: relative;
+    width: 350px;
+    height: 85px;
+    background: #398cc0;
+    border-radius: 20px;
+    filter: drop-shadow(-20px 20px 10px #398cc055);
+    /* 展開動畫變慢 */
+    transition: 0.75s ease-in-out;
+}
+
+/* 拉開藍色方形 "card"後的屬性 */
+.card.active{
+    height: 420px;
+}
+
+/* 方形下面的拉軸 */
+.toggle{
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 60px;
+    background: #398cc0;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    cursor: pointer;
+}
+
+/* card 跟 toggle 熔接的轉角 */
+/* 本體看不到   用陰影的效果做 */
+.toggle::before{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    /* background: transparent; */
+    left: -34px;
+    border-top-right-radius: 35px;
+    box-shadow: 11px -10px 0 10px #398cc0;
+}
+
+.toggle::after{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    /* background: red; */
+    right: -34px;
+    border-top-left-radius: 35px;
+    box-shadow: -11px -10px 0 10px #398cc0;
+}
+
+/* 下面的白色箭頭 */
+/* 用border做 */
+.toggle span{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    /* 以下三個都是調位置 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%) rotate(45deg);
+    
+}
+
+/* 展開後的"card" 屬性 */
+.card.active .toggle span{
+    transform: translate(-50%, -70%) rotate(225deg);
+    /* 旋轉動畫變慢 */
+    transition: 0.75s ease-in-out;
+}
+
+.contentBox{
+    position: absolute;
+    inset: 0px;
+    overflow: hidden;
+}
+
+.contentBox .content{
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    /* 如果沒加Z軸  熔接用的陰影會蓋掉文字 */
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contentBox .content h2{
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    line-height: 1.5rem;
+    text-shadow: -10px 10px 10px rgba(0, 0, 0, 1);
+}
+
+.contentBox .content h2 span{
+    font-size:  1rem;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.imgBox{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    margin-top: 20px;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.7);
+    border: 5px solid #ccc;
+    border-radius: 10px;
+}
+
+.imgBox img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* 按鈕 */
+.content button{
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(242, 0, 250);
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.7);
+
+}
+
+.content .btn1{
+    left: -75px;
+}
+.content .btn2{
+    left: 55px;
+    bottom: 59px;
+}
+

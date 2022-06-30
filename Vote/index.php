@@ -100,11 +100,14 @@
         </div>
         <!-- 主頁顯示區結束 -->
     </section>
+
+    
     <footer>
         <?php include "./layout/footer.php"; ?>
     </footer>
 
-    <script>
+<script>
+    //aside用的JS    
         //根據游標   圈圈換位置
         let list = document.querySelectorAll('li');
         for(let i=0; i<list.length; i++){
@@ -116,8 +119,6 @@
                 list[i].className = 'list active';
             }
         }
-
-
         // 根據indicator  切換外面的顏色
         list.forEach(elements => {
             elements.addEventListener('mouseenter',function(event){
@@ -126,7 +127,18 @@
                 bg.style.backgroundColor = color;
             })
         })
-    </script>
+
+    //container.card用的JS
+        //按下那個拉軸   card的class會變成 "card active"
+        //再按一下  會變回"card"
+        let card = document.querySelector('.card');
+        let cardtoggle = document.querySelector('.toggle');
+        cardtoggle.onclick = function () {
+            card.classList.toggle('active');            
+        }
+
+
+</script>
 </body>
 
 </html>
