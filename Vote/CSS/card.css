@@ -4,6 +4,7 @@
 
 /* 未拉開的藍色長方形 "card" */
 .card{
+    display: inline-block;
     position: relative;
     width: 350px;
     height: 85px;
@@ -16,6 +17,7 @@
 
 /* 拉開藍色方形 "card"後的屬性 */
 .card.active{
+    
     height: 420px;
 }
 

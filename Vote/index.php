@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/slider.css">
     <link rel="stylesheet" href="./css/aside.css">
     <link rel="stylesheet" href="./css/section.css">
+    <link rel="stylesheet" href="./css/card.css">
     <link rel="stylesheet" href="./css/member.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css" integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -101,7 +102,7 @@
         <!-- 主頁顯示區結束 -->
     </section>
 
-    
+
     <footer>
         <?php include "./layout/footer.php"; ?>
     </footer>
