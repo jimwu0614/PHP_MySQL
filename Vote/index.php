@@ -24,61 +24,60 @@
 
     <!-- 選單 -->
     <section>
-        <nav class="navbar">
-            <ul>
-                <?php
-                //會員身分分流
-                if (isset($_SESSION['name'])) {
-                ?>
-
-                    <li class="iconList">
-                        <a href="./index.php">
-                            <span class="icon"><i class="fa-solid fa-check-to-slot"></i></span>
-                            <span class="navTex"> Voting</span>
-                        </a>
-                    </li>
-                    <li class="iconList">
-                        <a href=".login/member.php">
-                            <span class="icon"><i class="fa-solid fa-user"></i></span>
-                            <span class="navTex"> Member Center</span>
-                        </a>
-                    </li>
-                    <li class="iconList">
-                        <a href="./login/logout.php">
-                            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
-                            <span class="navTex"> Logout</span>
-                        </a>
-                    </li>
-
-                <?php
-                } else {
-                ?>
-
-                    <li class="iconList">
-                        <a href="./login.php">
-                            <span class="icon"><i class="fa-solid fa-check-to-slot"></i></span>
-                            <span class="navTex"> Voting</span>
-                        </a>
-                    </li>
-                    <li class="iconList">
-                        <a href="./login.php">
-                            <span class="icon"><i class="fa-solid fa-user"></i></span>
-                            <span class="navTex"> Member Center</span>
-                        </a>
-                    </li>
-                    <li class="iconList">
-                        <a href="./login.php">
-                            <span class="icon"><i class="fa-solid fa-right-to-bracket"></i></span>
-                            <span class="navTex"> Login</span>
-                        </a>
-                    </li>
-
-                <?php
-                }
-                ?>
-
-            </ul>
-        </nav>
+        <aside>
+            <nav class="navbar">
+                <ul>
+                    <?php
+                    //會員身分分流
+                    if (isset($_SESSION['name'])) {
+                    ?>
+                        <li class="list active" data-color="rgba(245, 59, 87, 0.7)">
+                            <a href="./index.php">
+                                <span class="icon"><i class="fa-solid fa-check-to-slot"></i></span>
+                                <span class="navTex"> Voting</span>
+                            </a>
+                        </li>
+                        <li class="list" data-color="rgba(15, 188, 249, 0.7)">
+                            <a href="./member.php">
+                                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                                <span class="navTex"> Member Center</span>
+                            </a>
+                        </li>
+                        <li class="list" data-color="rgba(5, 196, 91, 0.7)">
+                            <a href="./login/logout.php">
+                                <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                                <span class="navTex"> Logout</span>
+                            </a>
+                        </li>
+                        <div class="indicator"></div>
+                    <?php
+                    } else {
+                    ?>
+                        <li class="list active" data-color="rgba(245, 59, 87, 0.7)">
+                            <a href="./login.php">
+                                <span class="icon"><i class="fa-solid fa-check-to-slot"></i></span>
+                                <span class="navTex"> Voting</span>
+                            </a>
+                        </li>
+                        <li class="list" data-color="rgba(15, 188, 249, 0.7)">
+                            <a href="./login.php" >
+                                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                                <span class="navTex"> Member Center</span>
+                            </a>
+                        </li>
+                        <li class="list" data-color="rgba(5, 196, 91, 0.7)">
+                            <a href="./login.php" >
+                                <span class="icon"><i class="fa-solid fa-right-to-bracket"></i></span>
+                                <span class="navTex"> Login</span>
+                            </a>
+                        </li>
+                        <div class="indicator"></div>
+                    <?php
+                    }
+                    ?>
+                </ul>
+            </nav>
+                </aside>
         <!-- 主頁 -->
         <div class="container">
             <?php
@@ -97,6 +96,30 @@
             <?php include "./layout/footer.php"; ?>
         </div>
     </section>
+
+    <script>
+        //根據游標   圈圈換位置
+        let list = document.querySelectorAll('li');
+        for(let i=0; i<list.length; i++){
+            list[i].onmouseover = function(){
+                let j = 0;
+                while (j < list.length){
+                    list[j++].className = 'list';
+                }
+                list[i].className = 'list active';
+            }
+        }
+
+
+        // 根據indicator  切換外面的顏色
+        list.forEach(elements => {
+            elements.addEventListener('mouseenter',function(event){
+                let bg = document.querySelector('aside');
+                let color = event.target.getAttribute('data-color');
+                bg.style.backgroundColor = color;
+            })
+        })
+    </script>
 </body>
 
 </html>

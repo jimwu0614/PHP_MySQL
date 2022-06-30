@@ -1,4 +1,4 @@
-section{
+section {
     display: flex;
     justify-content: center;
     width: 80%;
@@ -6,7 +6,14 @@ section{
     margin: 0 auto;
 }
 
-.navbar{
+aside{
+    width: 400px;
+    transition: 0.9s;
+    background-color: rgba(241, 161, 40, 0.1);
+}
+/* 底部白色那一條 */
+.navbar {
+    margin-top: 5rem;
     position: relative;
     display: inline-block;
     width: 70px;
@@ -16,66 +23,220 @@ section{
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 
-.navbar{
+.navbar ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 把間距拉開 */
+.navbar ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: calc(350px / 3);
+    z-index: 1;
+}
+
+/* 把icon跟文字拉到同一水平 */
+.navbar ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+}
+
+.navbar ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+}
+
+.navbar ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.navbar ul li.active a .icon{
+color: #fff;
+}
+
+/* 把icon放大 */
+.navbar ul li a .icon i{
+    font-size: 24px;
+}
+
+/* 把文字往右邊挪 */
+.navbar ul li a .navTex{
+    position: absolute;
+    top: 50%;
+    left: 110px;
+    background: #fff;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: 0.5s;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+    opacity: 0; 
+    visibility: hidden;
+}
+
+.navbar ul li:hover a .navTex{
+    opacity: 1; 
+    visibility: visible;
+    transform: translateX(-25px) translateY(-50%);
 
 }
 
-section .container{
+/* 對話框前面的小角 */
+.navbar ul li:hover a .navTex::before{
+    content: "";
+    position: absolute;
+    /* position: relative; */
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    left: -8px;
+    top: 48%;
+    transform: rotate(45deg) translateY(-50%);
+    border-radius: 3px;
+
+}
+
+/* 覆蓋上白色那條的東西 配上JS  做hover簍空 */
+.navbar ul .indicator{
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: calc(350px / 3);
+    transition: 0.5s;
+}
+
+.navbar ul .indicator::before{
+    content: "";
+    position: absolute;
+    top: 9%;
+    left: 15%;
+    width: 50px;
+    height: 50px;
+    /* background-color: #333; */
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+/* 游標移上  圈圈會換位置 */
+.navbar ul li:nth-child(1).active ~ .indicator{
+    transform: translateY(calc((350px / 3) * 0));
+
+}
+
+.navbar ul li:nth-child(2).active ~ .indicator{
+    transform: translateY(calc((350px / 3) * 1));
+
+}
+
+.navbar ul li:nth-child(3).active ~ .indicator{
+    transform: translateY(calc((350px / 3) * 2));
+
+}
+
+/* 換顏色 */
+.navbar ul li:nth-child(1).active ~ .indicator::before{  
+    /* background: #f53b57; */
+    background: rgba(245, 59, 87, 1);
+}
+
+.navbar ul li:nth-child(2).active ~ .indicator::before{  
+    /* background: #0fbcf9; */
+    background: rgba(15, 188, 249, 1);
+
+}
+
+.navbar ul li:nth-child(3).active ~ .indicator::before{  
+    /* background: #05c45b; */
+    background: rgba(5, 196, 91, 1);
+
+}
+
+
+section .container {
     width: 80%;
 }
 
-.list{
-    margin:1rem 0 1rem 6rem;
+#voteList {
+    margin: 1rem 0 1rem 6rem;
 }
-.list-header{
-    display:flex;
+
+#voteList-header {
+    display: flex;
     justify-content: space-evenly;
     text-align: center;
 
 }
-.list a{
+
+#voteList a {
     text-decoration: none;
 }
-.list-header div{
-    width:calc(100% / 5);
-    padding:0.5rem 1rem;
-    background:blue;
-    color:#ccc;
-}
-.list-header div a{
-    color:#ccc
-}
-.list-items div{
-    width:calc(100% / 5);
-    padding:0.5rem 1rem;
+
+#voteList-header div {
+    width: calc(100% / 5);
+    padding: 0.5rem 1rem;
+    background: blue;
+    color: #ccc;
 }
 
-.list-items{
-    display:flex;
-    justify-content: space-evenly;
-    padding:0.5rem;
-    margin:0.25rem 0;
-    border-bottom:1px solid #eee;
-    font-weight: bold;
-    font-size:1.15rem;
+#voteList-header div a {
+    color: #ccc
 }
-.list-items:hover{
+
+#voteList-items div {
+    width: calc(100% / 5);
+    padding: 0.5rem 1rem;
+}
+
+#voteList-items {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    margin: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    font-size: 1.15rem;
+}
+
+#voteList-items:hover {
     background-color: rgb(216, 255, 237);
     cursor: pointer;
-} 
+}
 
-.result-table{
+.result-table {
     border-collapse: collapse;
     box-shadow: 0 0 6px #bbb;
 }
-.result-table td{
+
+.result-table td {
     padding: 0.25rem;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
 }
 
-#types{
-    padding:0.25rem 0.5rem;
-    font-size:1.25rem;
-    border:0;
-    border-bottom:2px solid orange;
+#types {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    border: 0;
+    border-bottom: 2px solid orange;
 }

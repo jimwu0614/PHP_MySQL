@@ -24,7 +24,7 @@ include_once "./api/base.php";
         <a href="./login/logout.php">Logout</a>
         <a href="./index.php">VotingCenter</a>
     </nav>
-    
+
     <div class="login-box">
         <h1>Member Center</h1>
 
@@ -44,10 +44,12 @@ include_once "./api/base.php";
 
         ?>
         <div class="btns">
-        <!-- <a href='./login/edit.php?id=<?= $user['id']; ?>'><button>Edit</button></a> -->
-        <button class="but" onclick="location.href='./login/edit.php?id=<?= $user['id']; ?>'">Edit</button> 
-
+            <!-- <a href='./login/edit.php?id=<?= $user['id']; ?>'><button>Edit</button></a> -->
+            <button class="but" onclick="location.href='./login/edit.php?id=<?= $user['id']; ?>'">Edit</button>
+            
+            <button class="but" onclick="location.href='./index.php'">Back</button>
         </div>
+
         <!-- <form action='edit.php' method='post'>
         <input type="hidden" name="id" value="<?php //echo $user['id'];
                                                 ?>">
@@ -56,13 +58,9 @@ include_once "./api/base.php";
         <!--  重新導向 -->
         <!-- <button onclick="location.href='edit.php?id=<?php //echo $user['id'];
                                                             ?>'">編輯</button> -->
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+
     </div>
-    <div style="position: fixed; bottom: 0;">
+    <div>
         <?php include "./layout/footer.php"; ?>
     </div>
 </body>

@@ -31,8 +31,8 @@ if(isset($_GET['filter'])){
         </select>
     </div>
 <div>
-        <ul class='list'>
-            <li class='list-header'>
+        <ul id='voteList'>
+            <li id='voteList-header'>
                 <div>投票主題</div>
                 <?php
                 if(isset($_GET['type']) && $_GET['type']=='asc'){
@@ -123,7 +123,7 @@ if(isset($_GET['filter'])){
             //使用迴圈將每一筆資料的內容顯示在畫面上
             foreach($subjects as $subject){
                 echo "<a href='?do=vote_result&id={$subject['id']}'>";
-                echo "<li class='list-items'>";
+                echo "<li id='voteList-items'>";
                 echo "<div>{$subject['subject']}</div>";
                 if($subject['multiple']==0){
                     echo "<div class='text-center'>單選題</div>";
