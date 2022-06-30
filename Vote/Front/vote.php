@@ -1,3 +1,5 @@
+<!-- 投票中 -->
+
 <?php
 include_once "./api/base.php";
 

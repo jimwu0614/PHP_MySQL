@@ -65,7 +65,8 @@
     </section>
     <div class="btns">
         <button class="but but1" onclick="location.href='../index.php'">Go Vote</button>
-        <button class="but but2" onclick="location.href='../member.php'">Member Center</button>
+        <!-- <button class="but but2" onclick="location.href='../member.php'">Member Center</button> -->
+        <button class="but but2" onclick="location.href='../index.php?do=member'">Member Center</button>
     </div>
 
 </body>

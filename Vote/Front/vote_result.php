@@ -1,4 +1,13 @@
+<!-- 投票結果 -->
 <?php
+
+//如果沒有登入session    直接導向登入頁   
+if (!isset($_SESSION['name'])) {
+    //header('location:/login.php');
+    to('./login.php');
+}
+
+
 $subject=find("subjects",$_GET['id']);
 $opts=all("options",['subject_id'=>$_GET['id']]);
 ?>

@@ -25,7 +25,7 @@ $pdo->exec($sql);
 echo $sql;
 
 
-header('location:../login.php');
+header('location:./change_ok.php');
 
 
 ?>

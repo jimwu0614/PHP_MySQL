@@ -8,6 +8,7 @@
         <input type="email" name="email"><br>
         <label style="color: #a6c0fe; font-size: 19px; font-weight: 900;">Enter New Password</label>
         <input type="password" name="pw"><br>
+        <br>
         <!-- <input type="submit" value="檢查"> -->
 
         <div class='btns'>
