@@ -134,7 +134,7 @@ if (isset($_GET['filter'])) {
 </header>
 
 <?php
-//把一堆狗屎爛蛋運算丟去caculate.php
+//把一堆狗屎爛蛋運算丟去caculate.php  讓網頁好讀
 include "./front/caculate.php"
 ?>
 <!-- 投票表身 -->
@@ -142,24 +142,49 @@ include "./front/caculate.php"
     <?php
         //使用迴圈將每一筆資料的內容顯示在畫面上
         foreach ($subjects as $subject) {
-            ?>
+    ?>
+    <?php
+        //判斷單複選  for img
+     if ($subject['multiple'] == 0) {
+        $mul = "Single";
+    } else {
+        $mul = "Multiple";
+    };
+
+    $voteStart = $subject['start'];
+    $voteEnd = $subject['end'];
     
-    <div class="card" >
+    ?>
+
+
+
+    <div class="card" id="card_<?= $subject['id'] ?>">
         <div class="contentBox">
             <div class="content">
                 <h2><?= $subject['subject'] ?><br><span><?= $subject['typename'] ?></span></h2>
                     <div class="imgBox">
-                        <figcaption class="fig1">Bryce Canyon, Utah, United States</figcaption>
                         <img src="./img/<?= $subject['typename'] ?>.png" alt="">
-                        <figcaption class="fig2">Bryce Canyon, Utah, United States</figcaption>
+                        <figcaption class="fig1"><?=$mul?></figcaption>
+                        <figcaption class="fig2"><?=$voteStart?>~<?=$voteEnd?></figcaption>
                     </div>
+    <?php
+                    //判斷投票是否過期
+                    if( (strtotime("now")) > (strtotime($subject['end'])) ){
+    ?>
+                    <button class="btn1" style="background-color: crimson; color: white;">Vote Expired</button>
+    <?php
+                    }else{
+    ?>
                     <button class="btn1" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
+    <?php
+                    }
+    ?>
                     <button class="btn2" onclick="location.href='?do=vote_result&id=<?= $subject['id'] ?>'"> vote result</button>
                     <!-- <a href='?do=vote_result&id=<?= $subject['id'] ?>'> -->
                     
             </div>
         </div>
-        <div class="toggle" >
+        <div class="toggle" id="toggle_<?= $subject['id'] ?>">
             <span></span>
         </div>
     </div>
@@ -184,6 +209,7 @@ include "./front/caculate.php"
                 echo "<a href='?p={$i}{$querystr}{$queryfilter}'>&nbsp;";
                 echo $i;
                 echo "&nbsp;</a>";
+                echo $p;
             }
         }
     

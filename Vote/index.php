@@ -130,21 +130,60 @@
             })
         })
 
-          //container.card用的JS
+        /*  //container.card用的JS
         //按下那個拉軸   card的class會變成 "card active"
         //再按一下  會變回"card"
             var card = '';
             var cardtoggle = '';
-            let card = document.querySelector('.card');
-            let cardtoggle = document.querySelector('.toggle');
-            // var card = document.getElementById('card<?= $subject['id'] ?>');
-            // vat cardtoggle = document.getElementById('toggle<?= $subject['id'] ?>');
+            // let card = document.querySelector('.card');
+            // let cardtoggle = document.querySelector('.toggle');
+            var card = document.getElementById('card<?= $subject['id'] ?>');
+            vat cardtoggle = document.getElementById('toggle<?= $subject['id'] ?>');
             console.log(card);
             console.log(cardtoggle);
             cardtoggle.onclick = function () {
             card.classList.toggle('active');            
         }
-        
+        */
+
+
+        //JQ 等網頁全部跑完  再執行function
+        $(document).ready(function () {
+            //點擊".toggle"時  執行function
+            $(".toggle").click(function() {
+                //抓被點擊的物件的id
+                var tmpID = $(this).attr("id"); 
+                 console.log("tmpID: " + tmpID);                
+                        
+                    var tmpThis = $(this);
+                    console.log("tmpThis: " + tmpThis);              
+
+                //抓"toogle_1"   此字串的第7個字元
+                var tmpNo = tmpID.substring(7);  
+                // var tmpNo = <?= $subject['id'] ?>;  
+                console.log("tmpNo: " + tmpNo);
+                
+                
+                
+                // var tmpCard = $("#card_" + tmpNo);
+                var tmpCard = $("#card_" + tmpNo);
+                 
+                
+                //JQ語法
+                //判斷 class   若有  就移除"active"    
+                //            若無   就新增"active"
+
+                if (tmpCard.hasClass("active"))
+                {
+                    $("#card_" + tmpNo).removeClass("active");
+                }
+                else
+                {
+                    $("#card_" + tmpNo).addClass("active");
+                }
+                 
+            });
+        });
 
 
 

@@ -27,6 +27,9 @@
     }
     
 
+
+
+
     //算頁數
 
     $total = math('subjects', 'count', 'id', $filter);
