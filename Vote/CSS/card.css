@@ -8,6 +8,7 @@
     position: relative;
     width: 350px;
     height: 85px;
+    margin: 20px 5px 100px 5px;
     background: #398cc0;
     border-radius: 20px;
     filter: drop-shadow(-20px 20px 10px #398cc055);
@@ -126,6 +127,14 @@
     border: 5px solid #ccc;
     border-radius: 10px;
 }
+
+.imgBox .fig1{
+    
+}
+
+.imgBox .fig2{
+
+}    
 
 .imgBox img{
     width: 100%;

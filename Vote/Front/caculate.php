@@ -26,8 +26,11 @@
         }
     }
     
+
+    //算頁數
+
     $total = math('subjects', 'count', 'id', $filter);
-    $div = 3;  // 一頁顯示幾筆
+    $div = 6;  // 一頁顯示幾筆
     $pages = ceil($total / $div);  //判斷有幾頁
     $now = isset($_GET['p']) ? $_GET['p'] : 1;
     $start = ($now - 1) * $div;

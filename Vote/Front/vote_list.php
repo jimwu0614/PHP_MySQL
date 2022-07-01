@@ -144,20 +144,22 @@ include "./front/caculate.php"
         foreach ($subjects as $subject) {
             ?>
     
-    <div class="card">
+    <div class="card" id="card_<?= $subject['id'] ?>">
         <div class="contentBox">
             <div class="content">
                 <h2><?= $subject['subject'] ?><br><span><?= $subject['typename'] ?></span></h2>
                     <div class="imgBox">
+                        <figcaption class="fig1">Bryce Canyon, Utah, United States</figcaption>
                         <img src="" alt="">
+                        <figcaption class="fig2">Bryce Canyon, Utah, United States</figcaption>
                     </div>
-                    <button class="btn1">Vote Now</button>
-                    <button class="btn2"> vote result</button>
-                    <a href='?do=vote_result&id=<?= $subject['id'] ?>'>
+                    <button class="btn1" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
+                    <button class="btn2" onclick="location.href='?do=vote_result&id=<?= $subject['id'] ?>'"> vote result</button>
+                    <!-- <a href='?do=vote_result&id=<?= $subject['id'] ?>'> -->
                     
             </div>
         </div>
-        <div class="toggle">
+        <div class="toggle" id="toggle_<?= $subject['id'] ?>">
             <span></span>
         </div>
     </div>
@@ -187,4 +189,7 @@ include "./front/caculate.php"
     
         ?>
     </div>
+    <script>
+
+    </script>
 </article>

@@ -70,7 +70,9 @@ section .container {
 
 #types {
     padding: 0.25rem 0.5rem;
+    margin-left: 30px;
     font-size: 1.25rem;
+    color: greenyellow;
     border: 0;
     border-bottom: 2px solid orange;
 }
