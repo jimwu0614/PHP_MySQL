@@ -15,6 +15,10 @@
     border: none;
     background: none;
 }
+.container header select option{
+    border: none;
+    background: #999;
+}
 
 .container header>div{
     display: inline-block;
@@ -63,4 +67,29 @@ font-size: 25px;
 
 .container article{
     padding: 20px;
+}
+
+
+
+/* 切換頁碼區 */
+.container article .page{
+    margin: 20px auto;
+    width: 40%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 15px;
+    padding: 5px auto;
+}
+
+
+.container article .page a{
+    background: transparent;
+    border: 0;
+    font-size: 30px;
+    color: rgb(37, 238, 121);
+    text-decoration: none;
+    margin: 5px auto;
+    cursor: pointer;
+    
 }

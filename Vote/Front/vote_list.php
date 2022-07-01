@@ -144,13 +144,13 @@ include "./front/caculate.php"
         foreach ($subjects as $subject) {
             ?>
     
-    <div class="card" id="card_<?= $subject['id'] ?>">
+    <div class="card" >
         <div class="contentBox">
             <div class="content">
                 <h2><?= $subject['subject'] ?><br><span><?= $subject['typename'] ?></span></h2>
                     <div class="imgBox">
                         <figcaption class="fig1">Bryce Canyon, Utah, United States</figcaption>
-                        <img src="" alt="">
+                        <img src="./img/<?= $subject['typename'] ?>.png" alt="">
                         <figcaption class="fig2">Bryce Canyon, Utah, United States</figcaption>
                     </div>
                     <button class="btn1" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
@@ -159,7 +159,7 @@ include "./front/caculate.php"
                     
             </div>
         </div>
-        <div class="toggle" id="toggle_<?= $subject['id'] ?>">
+        <div class="toggle" >
             <span></span>
         </div>
     </div>
@@ -175,7 +175,7 @@ include "./front/caculate.php"
 
 
 
-    <div class="text-center">
+    <div class="page">
         <?php
         //顯示頁數
         if ($pages > 1) {
