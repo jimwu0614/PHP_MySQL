@@ -29,7 +29,7 @@ $opts = all("options", ['subject_id' => $_GET['id']]);
         <table>
             <tr class="table_header">
                 <td>Option</td>
-                <td>Vote Count</td>
+                <td>Vote Counts</td>
                 <td>Percentage</td>
             </tr>
             <?php

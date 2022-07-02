@@ -42,6 +42,26 @@
     background: #2980b9
 }
 
+.container-box form .vote-item {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.container-box form .vote-item:hover {
+    border-radius: 25px;
+    background: #666;
+}
+
+/* checkbox變大 */
+.container-box form .vote-item input[type=radio]{
+    transform: scale(2);
+}
+    
+.container-box form .vote-item input[type=checkbox]{
+    transform: scale(2);
+}
+
+
 
 .btns button {
     width: 160px;

@@ -7,6 +7,7 @@ $p = "";
 if (isset($_GET['p'])) {
     $p = "&p={$_GET['p']}";
 }
+
 $querystr = "";
 if (isset($_GET['order'])) {
     $querystr = "&order={$_GET['order']}&type={$_GET['type']}";
@@ -219,7 +220,7 @@ include "./front/caculate.php"
                 echo "<a href='?p={$i}{$querystr}{$queryfilter}'>&nbsp;";
                 echo $i;
                 echo "&nbsp;</a>";
-                echo $p;
+                // echo $p;
             }
         }
     
