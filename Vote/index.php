@@ -9,7 +9,6 @@
     <title>VotingCenter</title>
     <!--使用拆分css檔案的方式來區分共用的css設定及前後台不同的css-->
     <link rel="stylesheet" href="./css/basic.css">
-    <link rel="stylesheet" href="./css/front.css">
     <link rel="stylesheet" href="./css/slider.css">
     <link rel="stylesheet" href="./css/aside.css">
     <link rel="stylesheet" href="./css/section.css">
@@ -28,9 +27,9 @@
         ?>
     </div>
 
-    <!-- 選單 -->
     <section>
         
+        <!-- 選單 -->
         <aside>
             <nav class="navbar">
                 <ul>
@@ -105,7 +104,7 @@
     </section>
 
 
-    <footer>
+    <footer id="footer">
         <?php include "./layout/footer.php"; ?>
     </footer>
 
@@ -131,22 +130,31 @@
             })
         })
 
-        /*  //container.card用的JS
+
+
+
+        //container.card用的JS
         //按下那個拉軸   card的class會變成 "card active"
         //再按一下  會變回"card"
-            var card = '';
-            var cardtoggle = '';
-            // let card = document.querySelector('.card');
-            // let cardtoggle = document.querySelector('.toggle');
-            var card = document.getElementById('card<?= $subject['id'] ?>');
-            vat cardtoggle = document.getElementById('toggle<?= $subject['id'] ?>');
-            console.log(card);
-            console.log(cardtoggle);
-            cardtoggle.onclick = function () {
-            card.classList.toggle('active');            
-        }
-        */
+        
 
+        // //方法1   用onclick function
+        // //用之前要去toggle那邊加上 onclick="active('<?= $subject['id'] ?>')"
+
+        // function active(id){
+
+        // let card = document.querySelector('.card'+id);
+        // let cardtoggle = document.querySelector('.toggle'+id);
+        
+        // console.log(card);
+        // console.log(cardtoggle);
+
+        //     cardtoggle.onclick = function () {
+        //     card.classList.toggle('active');     
+        //     }
+        // }   
+        
+        
 
         //JQ 等網頁全部跑完  再執行function
         $(document).ready(function () {

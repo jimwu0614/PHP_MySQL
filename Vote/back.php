@@ -11,96 +11,94 @@ include_once "./api/base.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voting_Menegement</title>
     <link rel="stylesheet" href="./css/basic.css">
-    <link rel="stylesheet" href="./css/back.css">
     <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/aside.css">
+    <link rel="stylesheet" href="./css/back.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css" integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 
 </head>
 
-<body>
-    <!-- <div id="header">
-        <?php 
+<body class="body">
+    <!-- 頁首輪播器 -->
+    <div id="header">
+        <?php
         include "./layout/header.php";
         ?>
-    </div> -->
-    <div id="navbar">
-        <?php 
-        include "./layout/nav_back.php";
-        ?>
     </div>
-    <div id="container">
-        <?php
-        //把別的頁面顯示於container,同iframe
-        //根據網址有沒有帶do這個參數來決定要include那個外部檔案
-        if (isset($_GET['do'])) {
-            $file = "./back/" . $_GET['do'] . ".php";
-        }
 
-        //判斷$file變數是否存在及$file所代表的檔案位置是否存在
-        if (isset($file) && file_exists($file)) {
-            include $file;
-        } else {
-        ?>
-            <button class="btn btn-primary" onclick="location.href='?do=add_vote'">新增投票</button>
-
-            <div>
+    <section id="section">
+        <!-- 選單 -->
+        <aside>
+            <nav class="navbar">
                 <ul>
-                    <li class='list-header'>
-                        <div>投票主題</div>
-                        <div>單/複選題</div>
-                        <div>投票期間</div>
-                        <div>剩餘天數</div>
-                        <div>投票人數</div>
-                        <div>操作</div>
+                    <li class="list active" data-color="rgba(245, 59, 87, 0.7)">
+                        <a href="./back.php?do=back_main">
+                            <span class="icon"><i class="fa-solid fa-clipboard-list"></i></span>
+                            <span class="navTex"> Check Vote</span>
+                        </a>
+
                     </li>
-                    <?php
-                    //使用all()函式來取得資料表subjects中的所有資料，請參考base.php中的函式all($table,...$arg)
-                    $subjects = all('subjects');
-
-                    //使用迴圈將每一筆資料的內容顯示在畫面上
-                    foreach ($subjects as $subject) {
-                        echo "<li class='list-items'>";
-                        echo "<div>{$subject['subject']}</div>";
-                        if ($subject['multiple'] == 0) {
-                            echo "<div class='text-center'>單選題</div>";
-                        } else {
-                            echo "<div class='text-center'>複選題</div>";
-                        }
-                        echo "<div class='text-center'>";
-                        echo $subject['start'] . " ~ " . $subject['end'];
-                        echo "</div>";
-                        echo "<div class='text-center'>";
-                        $today = strtotime("now");
-                        $end = strtotime($subject['end']);
-                        if (($end - $today) > 0) {
-                            $remain = floor(($end - $today) / (60 * 60 * 24));
-                            echo "倒數" . $remain . "天結束";
-                        } else {
-                            echo "<span style='color:grey'>投票已結束</span>";
-                        }
-
-                        echo "</div>";
-                        echo "<div class='text-center'>{$subject['total']}</div>";
-                        echo "<div class='text-center'>";
-                        echo "<a class='edit' href='?do=edit&id={$subject['id']}'>編輯</a>";
-                        echo "<a class='del' href='?do=del&id={$subject['id']}'>刪除</a>";
-                        echo "</div>";
-                        echo "</li>";
-                    }
-
-                    ?>
+                    <li class="list" data-color="rgba(15, 188, 249, 0.7)">
+                        <a href="./back.php?do=add_vote">
+                            <span class="icon"><i class="fa-solid fa-file-circle-plus"></i></span>
+                            <span class="navTex">Add Vote</span>
+                        </a>
+                    </li>
+                    <li class="list" data-color="rgba(5, 196, 91, 0.7)">
+                        <a href="./login/logout.php">
+                            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                            <span class="navTex"> Logout</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
                 </ul>
+            </nav>
+        </aside>
+        <!-- 選單結束 -->
+        <!-- 主顯示區 -->
+        <article class="container">
+            <?php
+            //把別的頁面顯示於container,同iframe
+            if (isset($_GET['do'])) {
+                $file = './back/' . $_GET['do'] . ".php";
+            }
+            if (isset($file) && file_exists($file)) {
+                include $file;
+            } else {
+                include "./back/back_main_list.php";
+            }
+            ?>
+        </article>
+        <!-- 主顯示區結束 -->
+    </section>
 
-            </div>
-        <?php
-        }
-        ?>
-    </div>
-
-
-
-    <div>
+    <footer id="footer">
         <?php include "./layout/footer.php"; ?>
-    </div>
+    </footer>
+    <script>
+        //aside用的JS    
+        //根據游標   圈圈換位置
+        let list = document.querySelectorAll('li');
+        for (let i = 0; i < list.length; i++) {
+            list[i].onmouseover = function() {
+                let j = 0;
+                while (j < list.length) {
+                    list[j++].className = 'list';
+                }
+                list[i].className = 'list active';
+            }
+        }
+        // 根據indicator  切換外面的顏色
+        list.forEach(elements => {
+            elements.addEventListener('mouseenter', function(event) {
+                let bg = document.querySelector('aside');
+                let color = event.target.getAttribute('data-color');
+                bg.style.backgroundColor = color;
+            })
+        })
+    </script>
 </body>
 
 </html>

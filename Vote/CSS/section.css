@@ -63,6 +63,14 @@ font-size: 25px;
     text-decoration: none;
 }
 
+#types {
+    padding: 0.25rem 0.5rem;
+    margin-left: 30px;
+    font-size: 1.25rem;
+    color: greenyellow;
+    border: 0;
+    border-bottom: 2px solid orange;
+}
 
 /* header區 結束 */
 

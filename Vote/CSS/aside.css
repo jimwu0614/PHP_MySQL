@@ -1,13 +1,6 @@
 /* source  https://www.youtube.com/watch?v=tzszRG3bTRs&t=617s */
 
-aside{
-    width: 400px;
-    height: 600px;
-    transition: 0.9s;
-    background-color: rgba(133, 130, 125, 0.2);
-    border-radius: 25px;
-    backdrop-filter: blur(2px);
-}
+
 /* 底部白色那一條 */
 .navbar {
     margin-top: 5rem;

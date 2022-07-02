@@ -1,11 +1,15 @@
-#header{
-    height:100px;
-}
-#container{
-    min-height:calc(100vh - 100px - 3rem );
+.body{
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
-ul{
+#section{
+    position: relative;
+    min-height:calc(100vh - 255px - 3rem );
+}
+
+.container ul{
     margin:1rem 0 1rem 6rem;
 }
 .list-items{

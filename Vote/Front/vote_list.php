@@ -159,7 +159,7 @@ include "./front/caculate.php"
     ?>
 
 
-    <div class="card" id="card_<?= $subject['id'] ?>">
+    <div class="card card<?= $subject['id'] ?>" id="card_<?= $subject['id'] ?>">
         <div class="contentBox">
             <div class="content">
                 <h2><?= $subject['subject'] ?><br><span><?= $subject['typename'] ?></span></h2>
@@ -194,7 +194,7 @@ include "./front/caculate.php"
                     
             </div>
         </div>
-        <div class="toggle" id="toggle_<?= $subject['id'] ?>">
+        <div class="toggle toggle<?= $subject['id'] ?>" id="toggle_<?= $subject['id'] ?>" >
             <span></span>
         </div>
     </div>
@@ -204,7 +204,8 @@ include "./front/caculate.php"
             <?php
             //foreach的屁股
             }
-        
+            $count = count($subject);
+            echo $count
             ?>
 
 
