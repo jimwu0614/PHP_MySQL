@@ -46,6 +46,8 @@ echo $sql;
 echo "<hr>";
 echo $chk;
 
+
+//管理員跟一般會員分流
 if($adminAcc == 'admin' && $adminPW == "admin"){
     $_SESSION['name']=$adminAcc;
     header("location:../back.php");

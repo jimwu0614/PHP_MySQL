@@ -134,7 +134,7 @@ if (isset($_GET['filter'])) {
 </header>
 
 <?php
-//把一堆狗屎爛蛋運算丟去caculate.php  讓網頁好讀
+//把一堆狗屎爛蛋運算丟去caculate.php  讓code好讀
 include "./front/caculate.php"
 ?>
 <!-- 投票表身 -->
@@ -143,19 +143,19 @@ include "./front/caculate.php"
         //使用迴圈將每一筆資料的內容顯示在畫面上
         foreach ($subjects as $subject) {
     ?>
-    <?php
-        //判斷單複選  for img
-     if ($subject['multiple'] == 0) {
-        $mul = "Single";
-    } else {
-        $mul = "Multiple";
-    };
 
-    $voteStart = $subject['start'];
-    $voteEnd = $subject['end'];
+    <?php
+            //判斷單複選  for img
+        if ($subject['multiple'] == 0) {
+            $mul = "Single";
+        } else {
+            $mul = "Multiple";
+        };
+    
+        $voteStart = $subject['start'];
+        $voteEnd = $subject['end'];
     
     ?>
-
 
 
     <div class="card" id="card_<?= $subject['id'] ?>">
@@ -169,13 +169,22 @@ include "./front/caculate.php"
                     </div>
     <?php
                     //判斷投票是否過期
+                        //若過期
                     if( (strtotime("now")) > (strtotime($subject['end'])) ){
     ?>
                     <button class="btn1" style="background-color: crimson; color: white;">Vote Expired</button>
     <?php
-                    }else{
+                    //判斷是否有會員
+                            //有會員  導向投票
+                    }else if(isset($_SESSION['name'])){
     ?>
                     <button class="btn1" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
+    <?php
+                    //若無會員  導向登入頁
+                    }else{
+    ?>
+                    <button class="btn1" onclick="location.href='./login.php'">Vote Now</button>
+
     <?php
                     }
     ?>
@@ -192,6 +201,7 @@ include "./front/caculate.php"
         
         
             <?php
+            //foreach的屁股
             }
         
             ?>
@@ -215,7 +225,5 @@ include "./front/caculate.php"
     
         ?>
     </div>
-    <script>
 
-    </script>
 </article>

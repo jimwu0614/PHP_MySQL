@@ -17,11 +17,11 @@ include_once "./api/base.php";
 </head>
 
 <body>
-    <div id="header">
+    <!-- <div id="header">
         <?php 
         include "./layout/header.php";
         ?>
-    </div>
+    </div> -->
     <div id="navbar">
         <?php 
         include "./layout/nav_back.php";

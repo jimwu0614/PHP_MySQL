@@ -2,12 +2,16 @@
 include_once "./api/base.php";
 ?>
     <div class="login-box" >
-        <h1>Member Center</h1>
-
-        <h2>Welcome<?= $_SESSION['name'] ?></h2>
         <?php
-        $sql = "select * from `users` where acc='{$_SESSION['name']}'";
+        //從user 資料表內撈資料
+        //以帳號為依據  (WHERE)
+        $sql = "SELECT * FROM `users` WHERE acc='{$_SESSION['name']}'";
         $user = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+        ?>
+        <h1>Member Center</h1>
+        <h2>Welcome  <span style="font-weight: 900;color: violet;"><?= $user['name'] ?></span></h2>
+        
+        <?php
         echo "<hr><br>";
         echo 'ID number:' . $user['id'] . "<br><br>";
         echo 'Account:' . $user['acc'] . "<br><br>";

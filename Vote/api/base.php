@@ -23,7 +23,7 @@ function pdo(){
 //               a. 第一個參數必須為陣列，同2-a描述
 //               b. 第二個參數必須為字串，同2-b描述
 
-
+           //$table=資料表名稱 字串型式
 function all($table,...$arg){
     $pdo = pdo();
 
@@ -32,6 +32,8 @@ function all($table,...$arg){
 
     //依參數數量來決定進行的動作因此使用switch...case
     switch (count($arg)) {
+        
+        //
         case 1:
 
             //判斷參數是否為陣列
@@ -67,6 +69,7 @@ function all($table,...$arg){
                 //將條件語句的陣列使用implode()來轉成字串，最後再接上第二個參數(必須為字串)
                 $sql.=" WHERE ". implode(" AND " ,$tmp) . $arg[1];
             }else{
+                //$sql=$sql.$arg[1]
                 $sql.=$arg[1];
             }
         break;
@@ -94,18 +97,26 @@ function find($table,$arg){
     $pdo=pdo();
 
     $sql="SELECT * FROM $table WHERE ";
+        //如果傳進括號內的第二個參數是陣列的話
         if (is_array($arg)) {
         
+            //把陣列每個元素列出來
             foreach($arg as $key => $value){
 
                 $tmp[]="`$key`='$value'";
             
             }
+            
+          //$sql=$sql.implode(" AND " ,$tmp);
+          $sql.=implode(" AND " ,$tmp);
+          //$sql="SELECT * FROM $table WHERE `甲`='AA' AND `乙`='BB' ";
+          //implode : 把陣列$tmp裡面的東西變成一串字串 每個元素用"AND"連接
+
+
+        //如果傳進括號內的第二個參數 "不是" 陣列的話
         
-            $sql.=implode(" AND " ,$tmp);
-
         }else{
-
+            //$sql=$sql."`id`='$arg'"
             $sql.="`id`='$arg'";
 
         }
@@ -180,6 +191,8 @@ function q($sql){
 
 }
 
+
+//新增或修改
 function save($table,$arg){
     $pdo=pdo();
     $sql='';

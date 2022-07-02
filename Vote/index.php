@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/section.css">
     <link rel="stylesheet" href="./css/card.css">
     <link rel="stylesheet" href="./css/member.css">
+    <link rel="stylesheet" href="./css/vote&result.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css" integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./api/jquery-3.6.0.min.js"></script>
 </head>
