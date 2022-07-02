@@ -59,26 +59,32 @@ $opts = all("options", ['subject_id' => $_GET['id']]);
             }
             ?>
         </table>
+
+        <!-- 按鈕區 -->
+        <div class="btns">
+            
     <?php
                     //判斷投票是否過期
                         //若過期
                     if( (strtotime("now")) > (strtotime($subject['end'])) ){
     ?>
-                    <button class="btn1" style="background-color: crimson; color: white;">Vote Finished</button>
+                    <button class="" style="background-color: crimson; color: white;">Vote Ended</button>
     <?php
                     //判斷是否有會員
                             //有會員  導向投票
                     }else if(isset($_SESSION['name'])){
     ?>
-                    <button class="btn1" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
+                    <button class="but" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
     <?php
                     //若無會員  導向登入頁
                     }else{
     ?>
-                    <button class="btn1" onclick="location.href='./login.php'">Vote Now</button>
+                    <button class="but" onclick="location.href='./login.php'">Vote Now</button>
 
     <?php
                     }
     ?>
+        </div>
+
     </div>
 </div>
