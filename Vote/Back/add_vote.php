@@ -44,7 +44,7 @@
                 <input type="text" name="option[]"  required>
             </div>
         </div>
-        <input type="submit" value="新增" id="submit">
+        <input type="submit" value="Add Vote" id="submit">
 
     </form>
 </div>
