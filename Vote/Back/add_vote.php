@@ -1,37 +1,47 @@
 <div class="container-box add_vote">
     <form action="./api/add_vote.php" method="post">
+    <!-- <form action="./api/test.php" method="post"> -->
         <div>
-            <select name="types" id="types">
+            <select name="type_str" id="types">
                 <?php
                 $types = all("types");
                 foreach ($types as $type) {
                 ?>
-                    <option value="<?= $type['id'] ?>">
-                        <?= $type['name'] ?>
+                    <option value="<?= $type['id'] ?>+<?= $type['name'] ?>">
+                                   <?= $type['name'] ?>
                     </option>
                 <?php
                 }
                 ?>
             </select>
         </div>
+        
         <div >
-            <label for="subject">投票主題：</label>
-            <input type="text" name="subject" id="subject">
+            <!-- 投票主題 -->
+            <label for="subject">Topic：</label>
+            <input type="text" name="subject" id="subject" required>
         </div>
-        <div >
+        
+        <div style="padding-right: 60px">
+                <!-- 投票有效時間 -->
+                <label >Valid Till：</label>
+                <input type="date" name="end" required>
+        </div>
+
+        <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="multiple" value="0" checked>
-            <label>單選</label>
+            <label>Single</label>
             <input type="radio" name="multiple" value="1">
-            <label>複選</label>
+            <label>Multiple</label>
         </div>
         <div id="options">
             
-            <input type="button" value="新增選項" onclick="more()" id="addopt">
+            <input type="button" value="Add New Option" onclick="more()" id="addopt">
             <br>
             <div>
-                <label>選項：</label>
-                <input type="text" name="option[]" >
+                <label>Option：</label>
+                <input type="text" name="option[]"  required>
             </div>
         </div>
         <input type="submit" value="新增" id="submit">
@@ -42,9 +52,11 @@
 
 <script>
     function more() {
-        let opt = `<div><label>選項:</label><input type="text" name="option[]"></div>`;
+        let opt = `<div><label>Option：</label><input type="text" name="option[]"></div>`;
         let opts = document.getElementById('options').innerHTML;
         opts = opts + opt;
         document.getElementById('options').innerHTML = opts;
     }
 </script>
+
+

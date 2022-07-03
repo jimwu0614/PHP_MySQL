@@ -4,22 +4,22 @@
 
         <!-- 輸入區 -->
         <div class="user-box">
-            <input type="text" name="acc" required="">
+            <input type="text" name="acc" required>
             <label>Account</label>
         </div>
 
         <div class="user-box">
-            <input type="password" name="pw" required="">
+            <input type="password" name="pw" required>
             <label>Password</label>
         </div>
 
         <div class="user-box">
-            <input type="text" name="name" required="">
+            <input type="text" name="name" required>
             <label>Name</label>
         </div>
 
         <div class="user-box">
-            <input type="date" name="birthday" required="">
+            <input type="date" name="birthday" required>
             <label>Birthday</label>
         </div>
 
@@ -35,12 +35,12 @@
         </div>
 
         <div class="user-box">
-            <input type="text" name="addr" required="">
+            <input type="text" name="addr" required>
             <label>Address</label>
         </div>
 
         <div class="user-box">
-            <input type="email" name="email" required="">
+            <input type="email" name="email" required>
             <label>E-mail</label>
         </div>
 

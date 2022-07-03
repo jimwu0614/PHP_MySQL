@@ -204,9 +204,8 @@ include "./front/caculate.php"
             <?php
             //foreach的屁股
             }
-            $count = count($subject);
-            echo $count
-            ?>
+
+             ?>
 
 
 

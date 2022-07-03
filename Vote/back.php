@@ -30,7 +30,7 @@ include_once "./api/base.php";
         ?>
     </div>
 
-    <section id="section">
+    <section class="back_section" id="section" >
         <!-- 選單 -->
         <aside>
             <nav class="navbar">
@@ -101,6 +101,25 @@ include_once "./api/base.php";
             })
         })
     </script>
-</body>
 
+<?php
+if (isset($_GET['error'])) {
+    $alart = $_GET['error'];
+    echo "<script>
+    
+    alert('$alart');
+    
+    </script>";
+}
+if (isset($_GET['note'])) {
+    $alart2 = $_GET['note'];
+    echo "<script>
+    
+    alert('$alart2');
+    
+    </script>";
+}
+?>
+
+</body>
 </html>
