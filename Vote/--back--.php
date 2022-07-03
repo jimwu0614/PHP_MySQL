@@ -60,30 +60,40 @@ include_once "./api/base.php";
                     foreach ($subjects as $subject) {
                         echo "<li class='list-items'>";
                         echo "<div>{$subject['subject']}</div>";
+
                         if ($subject['multiple'] == 0) {
                             echo "<div class='text-center'>單選題</div>";
                         } else {
                             echo "<div class='text-center'>複選題</div>";
                         }
+
+
                         echo "<div class='text-center'>";
                         echo $subject['start'] . " ~ " . $subject['end'];
                         echo "</div>";
+
+
                         echo "<div class='text-center'>";
                         $today = strtotime("now");
                         $end = strtotime($subject['end']);
+                        
                         if (($end - $today) > 0) {
                             $remain = floor(($end - $today) / (60 * 60 * 24));
                             echo "倒數" . $remain . "天結束";
                         } else {
                             echo "<span style='color:grey'>投票已結束</span>";
                         }
-
                         echo "</div>";
+
+
                         echo "<div class='text-center'>{$subject['total']}</div>";
+
+
                         echo "<div class='text-center'>";
                         echo "<a class='edit' href='?do=edit&id={$subject['id']}'>編輯</a>";
                         echo "<a class='del' href='?do=del&id={$subject['id']}'>刪除</a>";
                         echo "</div>";
+
                         echo "</li>";
                     }
 

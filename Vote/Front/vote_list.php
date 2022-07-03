@@ -21,8 +21,8 @@ if (isset($_GET['filter'])) {
 
 ?>
 <header>
-    <label style="text-align: left;" for="types">Voting Type</label>
-    <label style="text-align: right;">Order</label>
+    <label style="text-align: left;" for="types">Category</label>
+    <label style="text-align: right;">Arrang By</label>
     <!-- 主題分類選單 -->
     <div style="text-align: left;">
         <select name="types" id="types" onchange="location.href=`?filter=${this.value}<?= $p; ?><?= $querystr; ?>`">
@@ -93,7 +93,7 @@ if (isset($_GET['filter'])) {
                 <div>
                     <a href="?order=remain&type=desc<?= $p; ?><?= $queryfilter; ?>">
                         <i class="fa-solid fa-hourglass"></i>
-                        <span class="navTex">Time Left</span>
+                        <span class="navTex">Expire Day</span>
                     </a>
                 </div>
             <?php
@@ -102,7 +102,7 @@ if (isset($_GET['filter'])) {
                 <div>
                     <a href="?order=remain&type=asc<?= $p; ?><?= $queryfilter; ?>">
                         <i class="fa-solid fa-hourglass"></i>
-                        <span class="navTex">Time Left</span>
+                        <span class="navTex">Expire Day</span>
                     </a>
                 </div>
             <?php
@@ -114,7 +114,7 @@ if (isset($_GET['filter'])) {
                 <div>
                     <a href='?order=total&type=desc<?= $p; ?><?= $queryfilter; ?>'>
                         <i class="fa-solid fa-users"></i>
-                        <span class="navTex">Hit</span>
+                        <span class="navTex">Total Vote</span>
                     </a>
                 </div>
             <?php
@@ -123,7 +123,7 @@ if (isset($_GET['filter'])) {
                 <div>
                     <a href='?order=total&type=asc<?= $p; ?><?= $queryfilter; ?>'>
                         <i class="fa-solid fa-users"></i>
-                        <span class="navTex">Hit</span>
+                        <span class="navTex">Total Vote</span>
                     </a>
                 </div>
             <?php

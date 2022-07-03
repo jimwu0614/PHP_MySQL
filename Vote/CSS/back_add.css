@@ -36,6 +36,9 @@
     font-size: 20px;
 }
 
+.container-box form {
+    margin-left: 170px
+}
 .container-box form div{
     margin: 30px;
     margin-left: 60px;
@@ -47,6 +50,7 @@
     display: inline-block;
     width: 200px;
     text-align: left;
+    font-size: 27px;
 }
 .container-box form div input{
     display: inline-block;
@@ -89,11 +93,10 @@
 }
 
 #submit{
-    margin-left: 30px;
+    margin-right: 160px;
     width: 140px;
     height: 45px;
     font-size: 30px;
-
     border-radius: 20px;
     box-shadow: #ffffff;
     border: none;

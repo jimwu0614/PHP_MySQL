@@ -60,7 +60,7 @@
     <section>
         Welcome
         <p>
-            You Are Already Logged In
+            You are logged in
         </p>
     </section>
     <div class="btns">

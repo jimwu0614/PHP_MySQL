@@ -24,23 +24,23 @@
         
         <div style="padding-right: 60px">
                 <!-- 投票有效時間 -->
-                <label >Valid Till：</label>
+                <label >Expires On：</label>
                 <input type="date" name="end" required>
         </div>
 
         <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="multiple" value="0" checked>
-            <label>Single</label>
+            <label>Single Choose</label>
             <input type="radio" name="multiple" value="1">
-            <label>Multiple</label>
+            <label>Multiple Choose</label>
         </div>
         <div id="options">
             
             <input type="button" value="Add New Option" onclick="more()" id="addopt">
             <br>
             <div>
-                <label>Option：</label>
+                <label>Answers Option：</label>
                 <input type="text" name="option[]"  required>
             </div>
         </div>
