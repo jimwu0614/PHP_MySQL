@@ -12,10 +12,7 @@
     font-size: 25px;
     
 }
-.container header select{
-    border: none;
-    background: none;
-}
+
 .container header select option{
     border: none;
     background: #999;
@@ -70,6 +67,7 @@ font-size: 25px;
     color: greenyellow;
     border: 0;
     border-bottom: 2px solid orange;
+    background: none
 }
 
 /* header區 結束 */
