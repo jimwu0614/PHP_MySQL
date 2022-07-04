@@ -136,8 +136,12 @@ if (isset($_GET['filter'])) {
 
 <?php
 //把一堆狗屎爛蛋運算丟去caculate.php  讓code好讀
-include "./front/caculate.php"
+include "./api/caculate.php";
+
+
 ?>
+
+
 <!-- 投票表身 -->
 <article>
     <?php
@@ -204,7 +208,7 @@ include "./front/caculate.php"
             <?php
             //foreach的屁股
             }
-
+            
              ?>
 
 

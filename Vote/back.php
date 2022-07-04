@@ -16,7 +16,9 @@ include_once "./api/base.php";
     <link rel="stylesheet" href="./css/back_list.css">
     <link rel="stylesheet" href="./css/back_add.css">
     <!-- <link rel="stylesheet" href="./css/vote&result.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css" integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css"
+        integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 
@@ -30,7 +32,7 @@ include_once "./api/base.php";
         ?>
     </div>
 
-    <section class="back_section" id="section" >
+    <section class="back_section" id="section">
         <!-- 選單 -->
         <aside>
             <nav class="navbar">
@@ -80,29 +82,29 @@ include_once "./api/base.php";
         <?php include "./layout/footer.php"; ?>
     </footer>
     <script>
-        //aside用的JS    
-        //根據游標   圈圈換位置
-        let list = document.querySelectorAll('li');
-        for (let i = 0; i < list.length; i++) {
-            list[i].onmouseover = function() {
-                let j = 0;
-                while (j < list.length) {
-                    list[j++].className = 'list';
-                }
-                list[i].className = 'list active';
+    //aside用的JS    
+    //根據游標   圈圈換位置
+    let list = document.querySelectorAll('li');
+    for (let i = 0; i < list.length; i++) {
+        list[i].onmouseover = function() {
+            let j = 0;
+            while (j < list.length) {
+                list[j++].className = 'list';
             }
+            list[i].className = 'list active';
         }
-        // 根據indicator  切換外面的顏色
-        list.forEach(elements => {
-            elements.addEventListener('mouseenter', function(event) {
-                let bg = document.querySelector('aside');
-                let color = event.target.getAttribute('data-color');
-                bg.style.backgroundColor = color;
-            })
+    }
+    // 根據indicator  切換外面的顏色
+    list.forEach(elements => {
+        elements.addEventListener('mouseenter', function(event) {
+            let bg = document.querySelector('aside');
+            let color = event.target.getAttribute('data-color');
+            bg.style.backgroundColor = color;
         })
+    })
     </script>
 
-<?php
+    <?php
 if (isset($_GET['error'])) {
     $alart = $_GET['error'];
     echo "<script>
@@ -122,4 +124,5 @@ if (isset($_GET['note'])) {
 ?>
 
 </body>
+
 </html>

@@ -15,17 +15,7 @@ if (isset($_GET['filter'])) {
     $queryfilter = "&filter={$_GET['filter']}";
 }
 
-//偵測是否需要排序
-$orderStr = '';
-if (isset($_GET['order'])) {
-    $_SESSION['order']['col'] = $_GET['order'];
-    $_SESSION['order']['type'] = $_GET['type'];
-    if ($_GET['order'] == 'remain') {
-        $orderStr = " ORDER BY DATEDIFF(`end`,now()) {$_SESSION['order']['type']}";
-    } else {
-        $orderStr = " ORDER BY `{$_SESSION['order']['col']}` {$_SESSION['order']['type']}";
-    }
-}
+
 ?>
 <header>
     <label style="text-align: left;" for="types">Category</label>
@@ -53,21 +43,21 @@ if (isset($_GET['order'])) {
     <div class="order">
         <b>
             <?php
-            if (isset($_GET['type']) && $_GET['type'] == 'asc') {
+            if (isset($_GET['type']) && $_GET['type'] == 'desc') {
             ?>
                 <div>
-                    <a href="?order=multiple&type=desc<?= $p; ?><?= $queryfilter; ?>">
-                        <i class="fa-solid fa-circle-dot"></i>
-                        <span class="navTex">Single</span>
+                    <a href="?order=multiple&type=asc<?= $p; ?><?= $queryfilter; ?>">
+                        <i class="fa-solid fa-square-check"></i>
+                        <span class="navTex">Multiple</span>
                     </a>
                 </div>
             <?php
             } else {
             ?>
                 <div>
-                    <a href="?order=multiple&type=asc<?= $p; ?><?= $queryfilter; ?>">
-                        <i class="fa-solid fa-square-check"></i>
-                        <span class="navTex">Multiple</span>
+                    <a href="?order=multiple&type=desc<?= $p; ?><?= $queryfilter; ?>">
+                        <i class="fa-solid fa-circle-dot"></i>
+                        <span class="navTex">Single</span>
                     </a>
                 </div>
             <?php
@@ -135,11 +125,48 @@ if (isset($_GET['order'])) {
                 </div>
             <?php
             }
+
+
             ?>
         </b>
     </div>
     <!-- 表頭排序區結束 -->
 </header>
+<?php
+// //把一堆狗屎爛蛋運算丟去caculate.php  讓code好讀
+// include "./front/caculate.php"
+
+// 偵測是否需要排序
+$orderStr = '';
+if (isset($_GET['order'])) {
+    $_SESSION['order']['col'] = $_GET['order'];
+    $_SESSION['order']['type'] = $_GET['type'];
+    if ($_GET['order'] == 'remain') {
+        $orderStr = " ORDER BY DATEDIFF(`end`,now()) {$_SESSION['order']['type']}";
+    } else {
+        $orderStr = " ORDER BY `{$_SESSION['order']['col']}` {$_SESSION['order']['type']}";
+    }
+}
+
+$filter = [];
+if (isset($_GET['filter'])) {
+	if (!$_GET['filter'] == 0) {
+		$filter = ['type_id' => $_GET['filter']];
+	}
+}
+
+// echo "orderStr=";
+// echo $orderStr;
+// ECHO "<br>";
+// echo "queryfilter=";
+// echo $queryfilter;
+// ECHO "<br>";
+// echo "P=";
+// echo $p;
+
+?>
+
+
 <div class="table-box">
     <table>
         <thead>
@@ -152,8 +179,19 @@ if (isset($_GET['order'])) {
         </thead>
     <?php
             //使用all()函式來取得資料表subjects中的所有資料，請參考base.php中的函式all($table,...$arg)
-            $subjects = all('subjects');
-            
+            // $subjects = all('subjects');
+
+			$total = math('subjects', 'count', 'id', $filter);
+			$div = 10;  // 一頁顯示幾筆
+			$pages = ceil($total / $div);  //判斷有幾頁
+			$now = isset($_GET['p']) ? $_GET['p'] : 1;
+			$start = ($now - 1) * $div;
+			$page_rows = " limit $start,$div";
+			
+			
+			$subjects = all('subjects', $filter, $orderStr . $page_rows);
+
+
             
             //使用迴圈將每一筆資料的內容顯示在畫面上
             foreach ($subjects as $subject) {
@@ -165,8 +203,7 @@ if (isset($_GET['order'])) {
 
             <tr>
             <!-- 投票名 -->
-            <td><?=$subject['subject']?></td>
-        
+            <td><a class="topic" href="index.php?do=vote_result&id=<?=$subject['id']?>"><?=$subject['subject']?></a></td>
 
         <!-- 單複選題 -->
     <?php
@@ -241,15 +278,8 @@ if (isset($_GET['order'])) {
 
 
 
-    $total = math('subjects', 'count', 'id', $filter);
-    $div = 10;  // 一頁顯示幾筆
-    $pages = ceil($total / $div);  //判斷有幾頁
-    $now = isset($_GET['p']) ? $_GET['p'] : 1;
-    $start = ($now - 1) * $div;
-    $page_rows = " limit $start,$div";
 
-
-    $subjects = all('subjects', $filter, $orderStr . $page_rows);
+	
 
     ?>
 

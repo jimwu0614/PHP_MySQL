@@ -1,6 +1,6 @@
 <!-- 投票結果 -->
 <?php
-include "./front/caculate.php";
+include "./api/caculate.php";
 //如果沒有登入session    直接導向登入頁   
 if (!isset($_SESSION['name'])) {
     //header('location:/login.php');
