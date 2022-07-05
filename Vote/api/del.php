@@ -10,5 +10,5 @@ if($table=='subjects'){
     del($table,$id);
 }
 
-to("../back.php");
+to("../back.php?note=Vote Deleted");
 ?>
