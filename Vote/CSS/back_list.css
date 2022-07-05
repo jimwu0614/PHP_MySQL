@@ -113,10 +113,6 @@ font-size: 25px;
 
 }
 
-.table-box table tr td{
-
-}
-
 .table-box table tr td .topic{
     color: rgb(22, 172, 164);
     text-decoration: none;
@@ -184,4 +180,10 @@ tr:hover td {
     margin: 5px auto;
     cursor: pointer;
     
+}
+
+.cancel{
+    position: absolute;
+    left: 350px;
+    width: 200px;
 }

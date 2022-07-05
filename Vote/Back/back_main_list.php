@@ -252,8 +252,8 @@ if (isset($_GET['filter'])) {
         <!-- 操作 -->
         
             <td>
-                <a class='edit' href=?do=edit&id=<?$subject['id']?>Edit</a>
-                <a class='del'  href=?do=del&id=<?$subject['id']?>Delete</a>
+                <a class='edit' href="?do=edit&id=<?=$subject['id']?>">Edit</a>
+                <a class='del'  href="?do=del&id=<?=$subject['id']?>">Delete</a>
             </td>
         </tr>
 

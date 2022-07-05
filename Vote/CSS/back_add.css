@@ -5,13 +5,16 @@
 }
 
 #types {
+    position: relative;
+    right: 60px;
     padding: 0.25rem 0.5rem;
     margin-left: 30px;
     font-size: 1.25rem;
     color: greenyellow;
     border: 0;
     border-bottom: 2px solid orange;
-    background: none
+    background: none;
+    
 }
 #types option{
     border: none;
@@ -39,8 +42,18 @@
 .container-box form {
     margin-left: 170px
 }
+
+/* vote list用 */
 .container-box form div{
     margin: 30px;
+    margin-left: 60px;
+    font-size: 30px;
+    width: 600px;
+    text-align: center;
+}
+
+.container-box .edit_form div{
+    margin: 20px;
     margin-left: 60px;
     font-size: 30px;
     width: 600px;
@@ -118,3 +131,10 @@
         inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
         inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
 }
+
+/* 後臺的編輯投票頁面用 */
+.edits_option{
+
+    margin: 10px auto;
+}
+

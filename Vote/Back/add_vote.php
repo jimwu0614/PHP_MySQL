@@ -1,7 +1,16 @@
 <div class="container-box add_vote">
     <form action="./api/add_vote.php" method="post">
     <!-- <form action="./api/test.php" method="post"> -->
+
+        <div >
+            <!-- 投票主題 -->
+            <label for="subject">Topic：</label>
+            <input type="text" name="subject" id="subject" required>
+        </div>
+
+
         <div>
+            <label>Category：</label>
             <select name="type_str" id="types">
                 <?php
                 $types = all("types");
@@ -16,11 +25,7 @@
             </select>
         </div>
         
-        <div >
-            <!-- 投票主題 -->
-            <label for="subject">Topic：</label>
-            <input type="text" name="subject" id="subject" required>
-        </div>
+
         
         <div style="padding-right: 60px">
                 <!-- 投票有效時間 -->
