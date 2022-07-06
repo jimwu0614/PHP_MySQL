@@ -4,6 +4,8 @@
 include_once "./api/base.php";
 
 $subject = find("subjects", $_GET['id']);
+// echo $subject['id'];
+// dd($subject);
 $opts = all('options', ['subject_id' => $_GET['id']]);
 
 /* dd($subject);
@@ -20,12 +22,18 @@ dd($opts); */
                 //若是單選題
                 if ($subject['multiple'] == 0) {
                 ?>
-                    <label ><input type="radio" name="opt" value="<?= $opt['id']?>">&nbsp;&nbsp;&nbsp;<?= $opt['option']?></label>
+                    <label >
+                        <input type="radio" name="opt" value="<?= $opt['id']?>">&nbsp;&nbsp;&nbsp;<?= $opt['option']?>
+                        <input type="hidden" name="subject_id" value="<?=$subject['id']?>">
+                    </label>
                 <?php
                 //若是複選題
                 } else {
                 ?>
-                    <label ><input type="checkbox" name="opt[]" value="<?= $opt['id']?>">&nbsp;&nbsp;&nbsp;<?= $opt['option']?></label>
+                    <label >
+                        <input type="checkbox" name="opt[]" value="<?= $opt['id']?>">&nbsp;&nbsp;&nbsp;<?= $opt['option']?>
+                        <input type="hidden" name="subject_id" value="<?=$subject['id']?>">
+                    </label>
                 <?php
                 }
                 ?>

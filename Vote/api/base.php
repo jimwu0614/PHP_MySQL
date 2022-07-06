@@ -120,7 +120,7 @@ function find($table,$arg){
             $sql.="`id`='$arg'";
 
         }
-
+        
         return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -196,8 +196,8 @@ function q($sql){
 function save($table,$arg){
     $pdo=pdo();
     $sql='';
+    //修改
     if(isset($arg['id'])){
-        //update
         
         foreach($arg as $key =>$value){
             
@@ -211,7 +211,7 @@ function save($table,$arg){
         $sql.="UPDATE $table SET ".implode(" AND " ,$tmp)." WHERE `id`='{$arg['id']}'";
 
     }else{
-        //insert
+        //新增
         $cols=implode("`,`",array_keys($arg));
         $values=implode("','",$arg);
 

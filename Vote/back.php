@@ -102,27 +102,19 @@ include_once "./api/base.php";
             bg.style.backgroundColor = color;
         })
     })
-    </script>
-
+    
     <?php
-if (isset($_GET['error'])) {
-    $alart = $_GET['error'];
-    echo "<script>
-    
-    alert('$alart');
-    
-    </script>";
-}
-if (isset($_GET['note'])) {
-    $alart2 = $_GET['note'];
-    echo "<script>
-    
-    alert('$alart2');
-    
-    </script>";
-}
-?>
+        if (isset($_GET['error'])) {
+            $alart = $_GET['error'];
+            echo "alert('$alart')";
+        }
+        if (isset($_GET['note'])) {
+            $alart2 = $_GET['note'];
+            echo "alert('$alart2')";
+        }
+    ?>
 
+</script>
 </body>
 
 </html>

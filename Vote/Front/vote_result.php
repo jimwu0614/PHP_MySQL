@@ -2,7 +2,7 @@
 <?php
 include "./api/caculate.php";
 //如果沒有登入session    直接導向登入頁   
-if (!isset($_SESSION['name'])) {
+if (!isset($_SESSION['acc'])) {
     //header('location:/login.php');
     to('./login.php');
 }
@@ -72,7 +72,7 @@ $opts = all("options", ['subject_id' => $_GET['id']]);
     <?php
                     //判斷是否有會員
                             //有會員  導向投票
-                    }else if(isset($_SESSION['name'])){
+                    }else if(isset($_SESSION['acc'])){
     ?>
                     <button class="but" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
     <?php

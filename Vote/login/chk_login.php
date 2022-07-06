@@ -10,7 +10,7 @@
 
 include_once "../api/base.php";
 $adminAcc=$_POST['acc'];
-$acc=$_POST['acc'];
+$member_acc=$_POST['acc'];
 
 $adminPW=($_POST['pw']);
 $pw=md5($_POST['pw']);
@@ -47,12 +47,44 @@ echo "<hr>";
 echo $chk;
 
 
+echo "<hr>";
+echo "<hr>";
+
+$sql2 = "SELECT * FROM `users` WHERE `acc`='qwe' && `pw`='7815696ecbf1c96e6894b779456d330e'";
+$chk2=$pdo->query($sql2)->fetchAll();
+
+echo $sql2;
+echo "<hr>";
+echo $chk;
+
+
+$member_id=$chk2[0]['id'];
+$member_name=$chk2[0]['name'];
+
+echo "<hr>";
+dd($chk2);
+echo "member_id=";
+echo $member_id;
+
+
+
+echo "<hr>";
+echo "\$_SESSION['name']=";
+echo $_SESSION['name'];
+echo "<hr>";
+
+
+
 //管理員跟一般會員分流
 if($adminAcc == 'admin' && $adminPW == "admin"){
-    $_SESSION['name']=$adminAcc;
+    $_SESSION['acc']=$adminAcc;
+    $_SESSION['id']="$member_id";
+    $_SESSION['name']="$member_name";
     header("location:../back.php");
 }elseif($chk){
-    $_SESSION['name']=$acc;
+    $_SESSION['acc']=$member_acc;
+    $_SESSION['id']="$member_id";
+    $_SESSION['name']="$member_name";
     header("location:./login_ok.php");
 }else{
     header("location:../login.php?error=帳號或密碼錯誤");

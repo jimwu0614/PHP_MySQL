@@ -181,7 +181,7 @@ include "./api/caculate.php";
     <?php
                     //判斷是否有會員
                             //有會員  導向投票
-                    }else if(isset($_SESSION['name'])){
+                    }else if(isset($_SESSION['id'])){
     ?>
                     <button class="btn1" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
     <?php

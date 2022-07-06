@@ -30,7 +30,7 @@ include_once "./api/base.php";
 
         <h2>Welcome<?= $_SESSION['name'] ?></h2>
         <?php
-        $sql = "select * from `users` where acc='{$_SESSION['name']}'";
+        $sql = "select * from `users` where acc='{$_SESSION['acc']}'";
         $user = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         echo "<hr><br>";
         echo 'ID number:' . $user['id'] . "<br><br>";

@@ -36,7 +36,7 @@
                     <?php
                     //會員身分分流
                     //有會員
-                    if (isset($_SESSION['name'])) {
+                    if (isset($_SESSION['id'])) {
                     ?>
                         <li class="list active" data-color="rgba(245, 59, 87, 0.7)">
                             <a href="./index.php">
@@ -196,7 +196,16 @@
 
 
 
-
+        <?php
+if (isset($_GET['error'])) {
+    $alart = $_GET['error'];
+    echo "alert('$alart')";
+}
+if (isset($_GET['note'])) {
+    $alart2 = $_GET['note'];
+    echo "alert('$alart2')";
+}
+?>
 </script>
 </body>
 
