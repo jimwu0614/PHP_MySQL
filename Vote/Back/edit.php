@@ -37,7 +37,7 @@ dd($opts); */
         <div style="padding-right: 60px">
                 <!-- 投票有效時間 -->
                 <label >Expires On：</label>
-                <input type="date" name="end" value="<?= $subj['end']; ?>" required>
+                <input type="date" name="end" value="<?= $subj['end']; ?>" >
         </div>
 
         <!-- 單複選 -->
@@ -65,14 +65,15 @@ dd($opts); */
         ?>
         </div>
 
-        <input type="submit" value="Add Vote" id="submit" style="position: absolute;">
+        <input type="submit" value="Edit Vote" id="submit" style="position: absolute;right: 150px;">
+        <input type="botton" onclick="location.href='./back.php'" value="Back" id="submit" style="position: absolute;right: 320px;">
     </form>
     
     <!-- 取消投票 -->
     <form action="./api/cancel.php" method="post">
         <input type="hidden" value="<?=$id?>" name="cancel">
         
-        <input type="submit" value="Cancel Vote" id="submit" class="cancel" style="    width: 200px;">
+        <input type="submit" value="Cancel Vote" id="submit" class="cancel" style="width: 200px;position: absolute;left: 300px;">
         <!-- <a id="submit" href="./api/cancel.php" class="cancelvote" style="width: 180px;">Cancel Vote</a> -->
     </form>
 

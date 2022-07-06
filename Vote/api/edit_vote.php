@@ -10,6 +10,7 @@ $new_subject=$_POST['subject'];
 $subject=find('subjects',$subject_id);
 
 $subject['subject']=$new_subject;
+$subject['end']=$_POST['end'];
 $subject['multiple']=$_POST['multiple'];
 $subject['type_id']=$_POST['types'];
 
@@ -43,5 +44,6 @@ $opts=all("options",['subject_id'=>$subject_id]);
 
 
 //使用to()函式來取代header，請參考base.php中的函式to($url)
-to('../back.php');
+to('../back.php?note=Edit Complite');
 ?>
+<a href="../back.php">back</a>
