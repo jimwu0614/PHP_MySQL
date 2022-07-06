@@ -47,7 +47,7 @@ function all($table,...$arg){
                 }
 
                 //使用implode()來轉換陣列為字串並和原本的$sql字串再結合
-                $sql.=" WHERE ". implode(" AND ", $tmp);
+                $sql = $sql." WHERE ". implode(" AND ", $tmp);
             }elseif(empty($arg[0])){
 
             }else{
@@ -208,7 +208,7 @@ function save($table,$arg){
 
         }
     //建立更新的sql語法
-        $sql.="UPDATE $table SET ".implode(" AND " ,$tmp)." WHERE `id`='{$arg['id']}'";
+        $sql.="UPDATE $table SET ".implode(" , " ,$tmp)." WHERE `id`='{$arg['id']}'";
 
     }else{
         //新增
@@ -217,9 +217,11 @@ function save($table,$arg){
 
         //建立新增的sql語法
         $sql="INSERT INTO $table (`$cols`) VALUES('$values')";
-
+            
+        
     }
     
+    echo $sql;
     return $pdo->exec($sql);
 
 }

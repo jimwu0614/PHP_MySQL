@@ -62,31 +62,8 @@ $opts = all("options", ['subject_id' => $_GET['id']]);
 
         <!-- 按鈕區 -->
         <div class="btns">
-            
-    <?php
-                    //判斷投票是否過期
-                        //若過期
-                    if( (strtotime("now")) > (strtotime($subject['end'])) ){
-    ?>
-                    <button class="" style="background-color: crimson; color: white;">Vote Ended</button>
-                    <button class="but" onclick="location.href='./index.php'" style="position: relative;top: 20px;">Back</button>
-    <?php
-                    //判斷是否有會員
-                            //有會員  導向投票
-                    }else if(isset($_SESSION['acc'])){
-    ?>
-                    <button class="but" onclick="location.href='?do=vote&id=<?= $subject['id'] ?>'">Vote Now</button>
-                    <button class="but" onclick="location.href='./index.php'" >Back</button>
-
-    <?php
-                    //若無會員  導向登入頁
-                    }else{
-    ?>
-                    <button class="but" onclick="location.href='./login.php'">Vote Now</button>
-
-    <?php
-                    }
-    ?>
+        
+                    <button class="but" onclick="location.href='./index.php'">Back</button>
         </div>
 
     </div>
