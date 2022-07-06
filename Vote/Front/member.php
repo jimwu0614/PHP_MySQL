@@ -5,6 +5,9 @@ include_once "./api/base.php";
         <?php
         //從user 資料表內撈資料
         //以帳號為依據  (WHERE)
+
+        
+
         $sql = "SELECT * FROM `users` WHERE acc='{$_SESSION['acc']}'";
         $user = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         ?>

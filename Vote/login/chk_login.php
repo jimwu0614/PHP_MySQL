@@ -37,7 +37,9 @@ $pw=md5($_POST['pw']);
 //     header("location:login.php?error=帳號或密碼錯誤");
 // }
 
-$sql="SELECT count(*) FROM `users` WHERE `acc`='$acc' && `pw`='$pw'";
+
+//只算count
+$sql="SELECT count(*) FROM `users` WHERE `acc`='$member_acc' && `pw`='$pw'";
 
 $chk=$pdo->query($sql)->fetchColumn();
 
@@ -50,22 +52,20 @@ echo $chk;
 echo "<hr>";
 echo "<hr>";
 
-$sql2 = "SELECT * FROM `users` WHERE `acc`='qwe' && `pw`='7815696ecbf1c96e6894b779456d330e'";
+$sql2 = "SELECT * FROM `users` WHERE `acc`='$member_acc' && `pw`='$pw'";
 $chk2=$pdo->query($sql2)->fetchAll();
-
-echo $sql2;
-echo "<hr>";
-echo $chk;
-
 
 $member_id=$chk2[0]['id'];
 $member_name=$chk2[0]['name'];
 
+
+echo $sql2;
 echo "<hr>";
 dd($chk2);
+
+
 echo "member_id=";
 echo $member_id;
-
 
 
 echo "<hr>";
@@ -93,4 +93,5 @@ if($adminAcc == 'admin' && $adminPW == "admin"){
 
 
 ?>
-<!-- <a href="./login.php">123123</a> -->
+<a href="./login.php">back</a>
+<a href="./login_ok.php">123123</a>
