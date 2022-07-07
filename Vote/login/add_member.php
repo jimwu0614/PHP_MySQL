@@ -2,12 +2,12 @@
 
 
 include_once "../api/base.php";
-// pdo();
+$pdo = pdo();
 // save('users' , );
 
 
-$dsn="mysql:host=localhost;charset=utf8;dbname=vote";
-$pdo=new PDO($dsn,'root','');
+// $dsn="mysql:host=localhost;charset=utf8;dbname=vote";
+// $pdo=new PDO($dsn,'root','');
 
 $pw=md5($_POST['pw']);
 // $pw=$_POST['pw'];

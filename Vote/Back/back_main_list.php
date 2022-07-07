@@ -22,7 +22,7 @@ if (isset($_GET['filter'])) {
     <label style="text-align: right;">Arrang By</label>
     <!-- 主題分類選單 -->
     <div style="text-align: left;">
-        <select name="types" id="types" onchange="location.href=`?filter=${this.value}<?= $p; ?><?= $querystr; ?>`">
+        <select name="types" id="types" onchange="location.href=`?filter=${this.value}<?= $p; ?><?= $querystr; ?>`" style="right: 0px;">
             <option value="0">ALL</option>
             <?php
             $types = all("types");

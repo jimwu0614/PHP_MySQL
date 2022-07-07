@@ -1,10 +1,12 @@
 <?php 
 
 
-$dsn="mysql:host=localhost;charset=utf8;dbname=vote";
-$pdo=new PDO($dsn,'root','');
+// $dsn="mysql:host=localhost;charset=utf8;dbname=vote";
+// $pdo=new PDO($dsn,'root','');
 
-// include_once "../api/base.php";
+include_once "../api/base.php";
+
+$pdo = pdo();
 
 $pw=md5($_POST['pw']);
 // $pw=$_POST['pw'];
