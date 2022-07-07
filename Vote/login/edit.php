@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
     <link rel="stylesheet" href="../css/basic.css">
-    <link rel="stylesheet" href="../CSS/slider.css">
-    <link rel="stylesheet" href="../CSS/member.css">
+    <link rel="stylesheet" href="../css/slider.css">
+    <link rel="stylesheet" href="../css/member.css">
     <style>
         span {
             font-size: 30px;
