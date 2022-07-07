@@ -58,7 +58,14 @@ if ($member_id == $data_user && $subject_id == $data_subject) {
     to("./?do=vote_result&id=$subject_id&note=You have already voted");
 }else{
 ?>
-
+<style>
+    .btns{
+        margin: 15px
+        }
+    .votebutton{
+    background: linear-gradient(to top, #ee9ca7 0%, #e8198b 100%);
+    }
+</style>
 
 <div class="container-box">
     <h1><?= $subject['subject']; ?></h1>
@@ -93,9 +100,11 @@ if ($member_id == $data_user && $subject_id == $data_subject) {
         }
         ?>
         <!-- 按鈕區 -->
+        <div class="btns ">
+            <button class="but votebutton" type="submit" style="width: 300px;">Vote</button>
+        </div>
         <div class="btns">
-            <button class="but" type="button" onclick="location.href='?do=vote_result&id=<?= $subject['id'] ?>'">Back</button>
-            <button class="but" type="submit">Vote</button>
+            <button class="but" type="button" onclick="location.href='?do=vote_result&id=<?= $subject['id'] ?>'">Result</button>
             <button class="but" type="reset">Reset</button>
             <button class="but" type="button" onclick="location.href='./index.php'">Home</button>
         </div>

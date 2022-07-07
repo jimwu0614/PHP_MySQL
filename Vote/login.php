@@ -67,6 +67,21 @@
     <div>
         <?php include "./layout/footer.php"; ?>
     </div>
+
+    <script>
+
+    <?php
+        if (isset($_GET['error'])) {
+            $alart = $_GET['error'];
+            echo "alert('$alart')";
+        }
+        if (isset($_GET['note'])) {
+            $alart2 = $_GET['note'];
+            echo "alert('$alart2')";
+        }
+    ?>
+
+    </script>
 </body>
 
 </html>

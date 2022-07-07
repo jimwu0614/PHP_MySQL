@@ -22,7 +22,7 @@ $pdo->exec($sql);
 
 
 
-header('location:../login.php');
+header('location:../login.php?note=Registration completed!');
 // to('login.php');
 
 ?>
